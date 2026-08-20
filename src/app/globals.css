@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+@plugin "tailwindcss-animate";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Stark Black & Vibrant Green Theme */
+  --background: #050505; /* Pure black/very dark grey */
+  --foreground: #ffffff; /* Pure white */
+
+  --card: #0a0a0a; /* Slightly lighter dark grey */
+  --card-foreground: #ffffff;
+
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+
+  --primary: #84cc16; /* Lime Green base for the gradient */
+  --primary-foreground: #050505;
+
+  --secondary: #171717; /* Dark grey */
+  --secondary-foreground: #ffffff;
+
+  --muted: #171717;
+  --muted-foreground: #a3a3a3; /* Neutral gray */
+
+  --accent: #171717;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+
+  --border: #27272a; /* Zinc 800 */
+  --input: #27272a;
+  --ring: #84cc16;
+
+  --radius: 0.75rem;
+
+  /* Custom Brand Gradient from the image */
+  --brand-gradient: linear-gradient(90deg, #93d937 0%, #16a34a 50%, #064e3b 100%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: 90%;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base custom utilities */
+@layer utilities {
+  .glass {
+    @apply bg-[#050505]/60 backdrop-blur-md border border-white/10 shadow-sm;
+  }
+  .bento-card {
+    @apply bg-card rounded-3xl border border-white/5 shadow-xl overflow-hidden;
+  }
+  .bg-brand-gradient {
+    background: var(--brand-gradient);
+  }
+  .text-brand-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
