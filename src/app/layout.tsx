@@ -12,9 +12,6 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "HR Core - Human Resources & Payroll Solutions",
   description: "Enhancing Human Resources Capabilities, Achieving Business Success.",
-  icons: {
-    icon: "/favicon.png?v=2",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

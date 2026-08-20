@@ -35,14 +35,21 @@ export function HeroSection2() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 mb-8 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm max-w-full"
+        className="relative z-10 mb-8 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden group max-w-full"
       >
-        <span className="text-xs text-center whitespace-nowrap text-gray-400">
+        {/* Shimmer sweep animation */}
+        <motion.div
+          animate={{ x: ["-200%", "300%"] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+          className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 z-0"
+        />
+        
+        <span className="text-xs text-center whitespace-nowrap text-gray-300 relative z-10">
           Introducing HR Core V2
         </span>
         <a
           href="#new-version"
-          className="flex items-center gap-1 text-xs hover:text-white transition-all active:scale-95 whitespace-nowrap text-gray-400"
+          className="flex items-center gap-1 text-xs hover:text-white transition-all active:scale-95 whitespace-nowrap text-primary font-medium relative z-10"
           aria-label="Read more about the new version"
         >
           Read more
@@ -81,13 +88,12 @@ export function HeroSection2() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="flex items-center gap-4 relative z-10 mb-16"
       >
-        <Button
-          type="button"
-          size="lg"
-          className="rounded-lg flex items-center justify-center bg-gradient-to-b from-white via-white/95 to-white/60 text-black hover:scale-105 active:scale-95 transition-all h-12 px-8 text-base font-medium border-0"
-        >
-          Start your free trial
-        </Button>
+        <button className="relative inline-flex overflow-hidden rounded-full p-[1px] hover:scale-105 active:scale-95 transition-all focus:outline-none shadow-2xl shadow-white/5 group">
+          <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_45%,#ffffff_50%,transparent_55%,transparent_100%)]" />
+          <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-white/10 px-8 py-3 text-base font-medium text-white backdrop-blur-xl h-12 group-hover:bg-white/20 transition-colors border border-white/5">
+            Start your free trial
+          </span>
+        </button>
       </motion.div>
 
       <motion.div 
