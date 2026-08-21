@@ -1,133 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
-
-const ArrowRight = ({ className = "", size = 16 }: { className?: string; size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M5 12h14" />
-    <path d="m12 5 7 7-7 7" />
-  </svg>
-);
+import { LineChart } from "lucide-react";
 
 export function HeroSection2() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start px-6 pt-32 pb-20 md:pt-40 bg-brand-gradient overflow-hidden text-white">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden bg-[#0d2a14]">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#508d29] via-[#1a4f27] to-[#0a1e10] pointer-events-none" />
       
-      {/* Abstract Glowing Orbs (HR Core Theme) */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-black/50 rounded-full blur-[120px] pointer-events-none" />
+      {/* Optional: Vignette/Darken edges */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
 
-      <motion.aside 
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 mb-8 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden group max-w-full"
-      >
-        {/* Shimmer sweep animation */}
+      {/* Hero Content */}
+      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-5xl">
+        
+        {/* Headline */}
         <motion.div
-          animate={{ x: ["-200%", "300%"] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
-          className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 z-0"
-        />
-        
-        <span className="text-xs text-center whitespace-nowrap text-gray-300 relative z-10">
-          Introducing HR Core V2
-        </span>
-        <a
-          href="#new-version"
-          className="flex items-center gap-1 text-xs hover:text-white transition-all active:scale-95 whitespace-nowrap text-primary font-medium relative z-10"
-          aria-label="Read more about the new version"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center justify-center font-extrabold text-white text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.1] tracking-tight w-full"
         >
-          Read more
-          <ArrowRight size={12} />
-        </a>
-      </motion.aside>
+          <span>HRMS. Payroll. HR Services.</span>
+          
+          <div className="relative mt-2 md:mt-4 flex items-center justify-center">
+            {/* The white pill */}
+            <motion.div 
+              initial={{ rotate: 0, scale: 0.9 }}
+              animate={{ rotate: -2, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6, type: "spring", stiffness: 200 }}
+              className="bg-white text-black px-6 md:px-10 py-1 md:py-2 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-10 whitespace-nowrap"
+            >
+              All Under One Roof.
+            </motion.div>
 
-      <motion.h1
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" as any }}
-        className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-medium text-center max-w-3xl px-6 leading-tight mb-6"
-        style={{
-          background: "linear-gradient(to bottom, #ffffff, #ffffff, rgba(255, 255, 255, 0.6))",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          letterSpacing: "-0.05em"
-        }}
-      >
-        Transform your HR with <br />Absolute Clarity
-      </motion.h1>
+            {/* Floating Glass Chart Card */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20, rotate: 0 }}
+              animate={{ opacity: 1, x: 0, rotate: 6 }}
+              transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[20%] md:translate-x-[40%] z-0"
+            >
+              <div className="bg-[#13301c]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 md:p-4 flex items-center gap-3 shadow-2xl w-[120px] md:w-[160px]">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-[#0a1a0f] rounded-lg flex items-center justify-center border border-white/5">
+                  <LineChart className="text-[#a3e635] w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <div className="flex flex-col gap-1.5 flex-1">
+                  <div className="w-full h-1.5 md:h-2 bg-white/30 rounded-full" />
+                  <div className="w-3/4 h-1.5 md:h-2 bg-white/15 rounded-full" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
 
-      <motion.p 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative z-10 text-sm md:text-base text-center max-w-2xl px-6 mb-10 text-gray-400"
-      >
-        A powerfully simple, beautifully designed platform that unites recruitment, payroll, and performance into one seamless experience.
-      </motion.p>
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="flex items-center gap-4 relative z-10 mb-16"
-      >
-        <button className="relative inline-flex overflow-hidden rounded-full p-[1px] hover:scale-105 active:scale-95 transition-all focus:outline-none shadow-2xl shadow-white/5 group">
-          <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_45%,#ffffff_50%,transparent_55%,transparent_100%)]" />
-          <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-white/10 px-8 py-3 text-base font-medium text-white backdrop-blur-xl h-12 group-hover:bg-white/20 transition-colors border border-white/5">
-            Start your free trial
-          </span>
-        </button>
-      </motion.div>
-
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="w-full max-w-5xl relative pb-20"
-      >
-        <div
-          className="absolute left-1/2 w-[90%] pointer-events-none z-0"
-          style={{
-            top: "-23%",
-            transform: "translateX(-50%)"
-          }}
-          aria-hidden="true"
+        {/* Sub-headline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-lg md:text-xl text-white/90 max-w-3xl mt-12 mb-10 leading-relaxed font-medium"
         >
-          <img
-            src="https://i.postimg.cc/Ss6yShGy/glows.png"
-            alt=""
-            className="w-full h-auto"
-            loading="eager"
-          />
-        </div>
-        
-        <div className="relative z-10">
-          <img
-            src="https://i.postimg.cc/SKcdVTr1/Dashboard2.png"
-            alt="Dashboard preview showing analytics and metrics interface"
-            className="w-full h-auto rounded-lg shadow-2xl"
-            loading="eager"
-          />
-        </div>
-      </motion.div>
+          Manage your people with smart HRMS technology, simplify payroll, and get expert HR services for all your HR needs.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="flex flex-col sm:flex-row items-center gap-4"
+        >
+          <button className="bg-white text-black font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+            Book a demo
+          </button>
+          <button className="bg-[#0b2212] border border-[#1a4223] text-white font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:bg-[#11311b] hover:scale-105 active:scale-95 transition-all shadow-xl">
+            Talk to Expert
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
 }
-
