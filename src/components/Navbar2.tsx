@@ -15,15 +15,17 @@ export function Navbar2() {
   React.useEffect(() => {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
-        // Turn black as soon as scrolling starts (50px)
-        start: 50,
+        trigger: document.body,
+        start: "top -100vh", // Triggers exactly when you scroll 100vh down
         end: 99999,
         onToggle: (self) => {
           if (headerRef.current) {
             if (self.isActive) {
-              headerRef.current.classList.add("bg-black", "shadow-lg");
+              headerRef.current.classList.remove("bg-transparent");
+              headerRef.current.classList.add("bg-[#07120e]", "shadow-2xl", "border-b", "border-white/5");
             } else {
-              headerRef.current.classList.remove("bg-black", "shadow-lg");
+              headerRef.current.classList.add("bg-transparent");
+              headerRef.current.classList.remove("bg-[#07120e]", "shadow-2xl", "border-b", "border-white/5");
             }
           }
         },

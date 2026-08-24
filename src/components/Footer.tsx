@@ -44,11 +44,11 @@ export function Footer() {
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
         <h1 className="text-[20vw] font-black text-white whitespace-nowrap">HR CORE</h1>
       </div>
-      
+
       {/* Top Gradient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[300px] bg-[#a3e635]/5 rounded-[100%] blur-[120px] pointer-events-none" />
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -56,22 +56,22 @@ export function Footer() {
         className="container max-w-7xl mx-auto px-6 relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-20">
-          
+
           {/* Brand Column (Takes 2 cols) */}
           <motion.div variants={itemVariants} className="lg:col-span-2 pr-0 lg:pr-8">
             <Link href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
               <Logo width={200} height={50} />
             </Link>
-            
+
             <p className="text-gray-400 text-base mb-8 leading-relaxed font-medium">
               Powering smarter HR with technology, payroll expertise, and professional HR services.
             </p>
-            
+
             <div className="flex gap-4">
               {[FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
-                <a 
+                <a
                   key={i}
-                  href="#" 
+                  href="#"
                   className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#a3e635]/20 hover:border-[#a3e635]/50 hover:text-[#a3e635] transition-all duration-300 hover:-translate-y-1"
                 >
                   <Icon size={18} />
@@ -79,7 +79,7 @@ export function Footer() {
               ))}
             </div>
           </motion.div>
-          
+
           {/* HRMS Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
@@ -127,7 +127,7 @@ export function Footer() {
               ))}
             </ul>
           </motion.div>
-          
+
           {/* Get in Touch Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
@@ -146,9 +146,9 @@ export function Footer() {
           </motion.div>
 
         </div>
-        
+
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6"
         >
