@@ -5,6 +5,7 @@ import {
   Users, Clock, Briefcase, DollarSign, GraduationCap,
   Settings, Target, Receipt, PieChart, Headphones,
 } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 /* ─── Floating icon data ─── */
 const floatingIcons = [
@@ -24,8 +25,9 @@ const floatingIcons = [
 ];
 
 export function HeroSection2() {
+  const { openModal } = useModal();
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden bg-[#060d10]">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-[#060d10]">
       {/* ═══ ANIMATED BACKGROUND LAYERS ═══ */}
 
       {/* Layer 1: Animated floating gradient orb — Top Left (Emerald) */}
@@ -98,7 +100,7 @@ export function HeroSection2() {
       ))}
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-5xl">
+      <div className="relative z-10 flex flex-col items-center text-center w-[82%]">
 
         {/* Headline */}
         <motion.div
@@ -140,10 +142,16 @@ export function HeroSection2() {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
-          <button className="bg-[#4CAF68] hover:bg-[#3B9B5A] text-white font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-[0_8px_30px_rgba(76,175,104,0.3)] hover:shadow-[0_8px_40px_rgba(76,175,104,0.5)] border border-[#4CAF68]/50">
+          <button 
+            onClick={openModal}
+            className="bg-[#4CAF68] hover:bg-[#3B9B5A] text-white font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-[0_8px_30px_rgba(76,175,104,0.3)] hover:shadow-[0_8px_40px_rgba(76,175,104,0.5)] border border-[#4CAF68]/50"
+          >
             Book a demo
           </button>
-          <button className="bg-white/[0.06] border border-white/[0.1] text-white font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:bg-white/[0.1] hover:scale-105 active:scale-95 transition-all shadow-xl backdrop-blur-md">
+          <button 
+            onClick={openModal}
+            className="bg-white/[0.06] border border-white/[0.1] text-white font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-xl hover:bg-white/[0.1] hover:scale-105 active:scale-95 transition-all shadow-xl backdrop-blur-md"
+          >
             Talk to Expert
           </button>
         </motion.div>

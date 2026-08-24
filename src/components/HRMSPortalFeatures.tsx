@@ -283,9 +283,9 @@ export function HRMSPortalFeatures() {
       />
 
       {/* ═══ MAIN CONTENT ═══ */}
-      <div className="relative z-10 max-w-[1440px] mx-auto">
+      <div className="relative z-10 w-[82%] mx-auto">
         {/* ─── Section Header ─── */}
-        <div className="pt-16 md:pt-20 pb-12 md:pb-16 px-6 md:px-12 text-center max-w-5xl mx-auto">
+        <div className="pt-16 md:pt-20 pb-12 md:pb-16 text-center max-w-5xl mx-auto">
           <h2
             className="hrms-heading text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.05]"
             style={{
@@ -304,7 +304,7 @@ export function HRMSPortalFeatures() {
         </div>
 
         {/* ─── Two-Column Scroll Layout ─── */}
-        <div className="flex flex-col lg:flex-row relative px-6 md:px-12">
+        <div className="flex flex-col lg:flex-row relative">
           {/* ▸ LEFT: Features + Timeline (42%) */}
           <div className="w-full lg:w-[42%] relative">
             {/* Vertical Timeline */}

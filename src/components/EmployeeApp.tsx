@@ -21,13 +21,13 @@ export function EmployeeApp() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#0f2e17] overflow-hidden text-white border-t border-white/5 relative">
+    <section className="py-24 bg-[#0f2e17] overflow-hidden text-white border-t border-white/5 relative">
       
       {/* Background Orbs */}
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#a3e635]/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center relative z-10">
+      <div className="w-[82%] mx-auto flex flex-col items-center text-center relative z-10">
         
         {/* Header */}
         <motion.div

@@ -15,8 +15,8 @@ export function WhyHRCore() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#0a0a0a] text-white border-t border-white/5 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-16 items-center">
+    <section className="py-24 bg-[#0a0a0a] text-white border-t border-white/5 relative overflow-hidden">
+      <div className="w-[82%] mx-auto flex flex-col md:flex-row gap-16 items-center">
         
         {/* Left: Text & List */}
         <div className="w-full md:w-1/2 flex flex-col relative z-10">

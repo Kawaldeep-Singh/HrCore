@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Logo } from "./Logo";
+import { useModal } from "@/context/ModalContext";
 
 const FacebookIcon = ({ size }: { size: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -22,6 +23,7 @@ const InstagramIcon = ({ size }: { size: number }) => (
 );
 
 export function Footer() {
+  const { openModal } = useModal();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,7 +55,7 @@ export function Footer() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="w-full max-w-[1400px] mx-auto px-6 relative z-10"
+        className="w-[82%] mx-auto relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-20">
 
@@ -88,9 +90,15 @@ export function Footer() {
             <ul className="space-y-3">
               {["HRMS Overview", "Features", "HRMS Portal", "Employee App", "Why HRMS", "Book a Demo"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
-                    <span className="text-sm font-medium">{item}</span>
-                  </Link>
+                  {item === "Book a Demo" ? (
+                    <button onClick={openModal} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                      <span className="text-sm font-medium">{item}</span>
+                    </button>
+                  ) : (
+                    <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                      <span className="text-sm font-medium">{item}</span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -136,10 +144,10 @@ export function Footer() {
             <ul className="space-y-3">
               {["Talk to an Expert", "Book a Demo"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                  <button onClick={openModal} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
                     <span className="text-sm font-medium">{item}</span>
                     <ArrowRight size={14} className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 text-[#a3e635] transition-all duration-300" />
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
