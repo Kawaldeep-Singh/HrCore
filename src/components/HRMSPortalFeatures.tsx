@@ -3,6 +3,11 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Users, Clock, Briefcase, IndianRupee, GraduationCap,
+  Settings, Target, Receipt, BarChart3, Headphones,
+  type LucideIcon,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,16 +27,16 @@ const featureImageMap: Record<string, string> = {
 
 /* ─── Feature Data ─── */
 const features = [
-  { num: "01", title: "Hire to Retire", desc: "Complete employee journey", color: "#4CAF68" },
-  { num: "02", title: "Time to Leave", desc: "Attendance & leave management", color: "#3B9B5A" },
-  { num: "03", title: "Recruit to Onboard", desc: "Hiring made simple", color: "#2F7D4C" },
-  { num: "04", title: "Payroll to Compliance", desc: "Payroll & statutory needs", color: "#4CAF68" },
-  { num: "05", title: "Learn & Grow", desc: "Training & development", color: "#3B9B5A" },
-  { num: "06", title: "Self-Service HR", desc: "Employee access & requests", color: "#2F7D4C" },
-  { num: "07", title: "Goals to Growth", desc: "Performance management", color: "#4CAF68" },
-  { num: "08", title: "Spend to Reimburse", desc: "Expenses & claims", color: "#3B9B5A" },
-  { num: "09", title: "Data to Decisions", desc: "Reports & insights", color: "#2F7D4C" },
-  { num: "10", title: "Connect & Support", desc: "HR communication & support", color: "#4CAF68" },
+  { num: "01", title: "Hire to Retire", desc: "Complete employee journey", color: "#4CAF68", icon: Users },
+  { num: "02", title: "Time to Leave", desc: "Attendance & leave management", color: "#3B9B5A", icon: Clock },
+  { num: "03", title: "Recruit to Onboard", desc: "Hiring made simple", color: "#2F7D4C", icon: Briefcase },
+  { num: "04", title: "Payroll to Compliance", desc: "Payroll & statutory needs", color: "#4CAF68", icon: IndianRupee },
+  { num: "05", title: "Learn & Grow", desc: "Training & development", color: "#3B9B5A", icon: GraduationCap },
+  { num: "06", title: "Self-Service HR", desc: "Employee access & requests", color: "#2F7D4C", icon: Settings },
+  { num: "07", title: "Goals to Growth", desc: "Performance management", color: "#4CAF68", icon: Target },
+  { num: "08", title: "Spend to Reimburse", desc: "Expenses & claims", color: "#3B9B5A", icon: Receipt },
+  { num: "09", title: "Data to Decisions", desc: "Reports & insights", color: "#2F7D4C", icon: BarChart3 },
+  { num: "10", title: "Connect & Support", desc: "HR communication & support", color: "#4CAF68", icon: Headphones },
 ];
 
 /* ─── Dynamic Dashboard Image Component ─── */
@@ -282,7 +287,7 @@ export function HRMSPortalFeatures() {
         {/* ─── Section Header ─── */}
         <div className="pt-16 md:pt-20 pb-12 md:pb-16 px-6 md:px-12 text-center max-w-5xl mx-auto">
           <h2
-            className="hrms-heading text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.05] whitespace-nowrap"
+            className="hrms-heading text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.05]"
             style={{
               background: "linear-gradient(180deg, #F4F7F5 0%, rgba(244,247,245,0.7) 100%)",
               WebkitBackgroundClip: "text",
@@ -354,17 +359,26 @@ export function HRMSPortalFeatures() {
                         filter: isActive ? "blur(0px)" : "blur(0.5px)",
                       }}
                     >
-                      {/* Number */}
+                      {/* Icon + Number */}
                       <div className="feature-num flex items-center gap-4 mb-6">
-                        <span
-                          className="text-5xl md:text-7xl font-black tracking-tighter transition-all duration-500"
+                        <div
+                          className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-all duration-500 shrink-0"
                           style={{
-                            background: isActive
-                              ? "linear-gradient(135deg, #4CAF68, #a3e635)"
-                              : "linear-gradient(135deg, rgba(244,247,245,0.2), rgba(244,247,245,0.1))",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
+                            background: isActive ? feature.color : "rgba(244,247,245,0.06)",
+                            border: isActive ? "none" : "1px solid rgba(244,247,245,0.08)",
+                            boxShadow: isActive ? `0 8px 30px ${feature.color}40, 0 0 0 1px ${feature.color}30` : "none",
                           }}
+                        >
+                          <feature.icon
+                            size={28}
+                            className="transition-colors duration-500"
+                            style={{ color: isActive ? "#fff" : "rgba(244,247,245,0.25)" }}
+                            strokeWidth={2}
+                          />
+                        </div>
+                        <span
+                          className="text-sm font-bold tracking-widest uppercase transition-colors duration-500"
+                          style={{ color: isActive ? feature.color : "rgba(244,247,245,0.15)" }}
                         >
                           {feature.num}
                         </span>
@@ -372,10 +386,10 @@ export function HRMSPortalFeatures() {
                         <div
                           className="feature-accent-line h-[2px] rounded-full transition-all duration-700 ease-out"
                           style={{
-                            width: isActive ? "64px" : "24px",
+                            width: isActive ? "48px" : "20px",
                             background: isActive
-                              ? "linear-gradient(90deg, #4CAF68, transparent)"
-                              : "rgba(244,247,245,0.1)",
+                              ? `linear-gradient(90deg, ${feature.color}, transparent)`
+                              : "rgba(244,247,245,0.08)",
                           }}
                         />
                       </div>

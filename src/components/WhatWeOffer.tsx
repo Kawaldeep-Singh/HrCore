@@ -9,24 +9,24 @@ export function WhatWeOffer() {
       num: "01",
       title: "HRMS",
       desc: "Smart technology App to manage your complete employee lifecycle.",
-      icon: <Laptop className="w-8 h-8 text-[#a3e635]" />,
+      icon: <Laptop className="w-8 h-8 text-[#16a34a]" />,
     },
     {
       num: "02",
       title: "Payroll",
       desc: "Reliable payroll processing and compliance support.",
-      icon: <IndianRupee className="w-8 h-8 text-[#a3e635]" />,
+      icon: <IndianRupee className="w-8 h-8 text-[#16a34a]" />,
     },
     {
       num: "03",
       title: "HR Services",
       desc: "Expert support for recruitment, HR operations, compliance and more.",
-      icon: <BriefcaseBusiness className="w-8 h-8 text-[#a3e635]" />,
+      icon: <BriefcaseBusiness className="w-8 h-8 text-[#16a34a]" />,
     },
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#0a0a0a] text-white">
+    <section className="py-24 px-6 bg-[#f7f9f8] text-[#1a1a1a]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
         {/* Left Side Content */}
         <motion.div 
@@ -36,14 +36,14 @@ export function WhatWeOffer() {
           transition={{ duration: 0.6 }}
           className="md:w-1/3 flex flex-col gap-6 sticky top-32"
         >
-          <span className="text-[#a3e635] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-[#16a34a] font-semibold tracking-wider uppercase text-sm">
             What We Offer
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0f172a]">
             Your Complete <br />
             HR Partner
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed mt-2">
+          <p className="text-gray-500 text-lg leading-relaxed mt-2">
             From HR technology and payroll to expert HR services, we bring everything you need to manage your people and HR operations under one roof.
           </p>
         </motion.div>
@@ -57,26 +57,26 @@ export function WhatWeOffer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="group bg-[#111111] hover:bg-[#1a1a1a] border border-white/5 hover:border-white/10 p-8 md:p-12 rounded-3xl transition-all duration-300 shadow-xl relative overflow-hidden"
+              className="group bg-white hover:bg-[#f0fdf4] border border-gray-200 hover:border-[#16a34a]/20 p-8 md:p-12 rounded-3xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.10)] relative overflow-hidden"
             >
               {/* Subtle gradient effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#16a34a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10 flex flex-col md:flex-row gap-8 md:items-start">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-[#0a0a0a] border border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-[#f0fdf4] border border-[#16a34a]/10 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
                     {item.icon}
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <span className="text-gray-500 font-bold text-xl md:text-2xl">{item.num} —</span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#a3e635] transition-colors">
+                    <span className="text-gray-300 font-bold text-xl md:text-2xl">{item.num} —</span>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0f172a] group-hover:text-[#16a34a] transition-colors">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+                  <p className="text-gray-500 text-lg md:text-xl leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -88,3 +88,4 @@ export function WhatWeOffer() {
     </section>
   );
 }
+

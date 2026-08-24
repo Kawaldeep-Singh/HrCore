@@ -96,3 +96,37 @@ body {
     background-clip: text;
   }
 }
+
+/* ═══ Hero Animated Background ═══ */
+@keyframes hero-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(80px, -60px) scale(1.1); }
+  50%      { transform: translate(-40px, -120px) scale(0.95); }
+  75%      { transform: translate(-100px, -30px) scale(1.05); }
+}
+@keyframes hero-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(-70px, 80px) scale(1.08); }
+  50%      { transform: translate(60px, 40px) scale(0.92); }
+  75%      { transform: translate(100px, -50px) scale(1.12); }
+}
+@keyframes hero-orb-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(50px, 70px) scale(1.15); }
+  66%      { transform: translate(-80px, -40px) scale(0.9); }
+}
+@keyframes hero-grid-pulse {
+  0%, 100% { opacity: 0.03; }
+  50%      { opacity: 0.06; }
+}
+@keyframes hero-line-flow {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.hero-orb-1 { animation: hero-orb-1 18s ease-in-out infinite; }
+.hero-orb-2 { animation: hero-orb-2 22s ease-in-out infinite; }
+.hero-orb-3 { animation: hero-orb-3 15s ease-in-out infinite; }
+.hero-grid-pulse { animation: hero-grid-pulse 6s ease-in-out infinite; }
+.hero-line-flow { animation: hero-line-flow 20s linear infinite; }
+
