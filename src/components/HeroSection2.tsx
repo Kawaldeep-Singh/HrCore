@@ -77,14 +77,14 @@ export function HeroSection2() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(6,13,16,0.7)_100%)] pointer-events-none" />
 
       {/* ═══ Floating Icon Orbs ═══ */}
-      {floatingIcons.map(({ Icon, top, left, right, bottom, size, delay, dx, dy, dur, opacity }, i) => (
+      {floatingIcons.map(({ Icon, top, left, right, size, delay, dx, dy, dur, opacity }, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: opacity || 1, scale: 1 }}
           transition={{ delay: 0.8 + delay, duration: 0.6, type: "spring" }}
           className="absolute z-[5] hidden md:flex"
-          style={{ top, left, right, bottom }}
+          style={{ top, left, right }}
         >
           <motion.div
             animate={{ x: dx, y: dy }}
