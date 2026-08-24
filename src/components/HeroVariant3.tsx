@@ -123,7 +123,7 @@ export function HeroVariant3() {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, opacity: 0 }}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-8 flex items-center gap-4 text-[#5f5e5e]"
