@@ -132,7 +132,7 @@ export function ContactSection() {
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300 resize-none"
                 />
               </div>
-
+  {/* test */}
               <button
                 type="button"
                 className="group w-full mt-4 bg-black hover:bg-gray-900 text-white font-bold text-lg py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 transform hover:-translate-y-1"
