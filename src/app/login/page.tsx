@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Mail, Lock, User, Phone, Github, Eye, EyeOff } from "lucide-react";
+import { ArrowRight, Mail, Lock, User, Phone, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
