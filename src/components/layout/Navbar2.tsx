@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { User } from "lucide-react";
-import { Logo } from "./Logo";
+import { Logo } from "@/components/ui/Logo";
 import { useModal } from "@/context/ModalContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -61,11 +61,12 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
         {/* Center: Navigation Links */}
         <nav className="hidden md:flex items-center gap-2 lg:gap-4">
           {["Home", "HRMS", "Payroll", "Services", "About", "Contact Us"].map((item) => {
-            const isActive = item === "Home" && pathname === "/";
+            const path = item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`;
+            const isActive = pathname === path;
             return (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : `/#${item.toLowerCase().replace(" ", "-")}`}
+                href={path}
                 className={`text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-1 px-3 lg:px-4 py-2 rounded-full ${
                   isActive 
                     ? "bg-white/10 text-white" 

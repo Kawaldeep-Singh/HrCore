@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Logo } from "./Logo";
+import { Logo } from "@/components/ui/Logo";
 import { useModal } from "@/context/ModalContext";
 
 const FacebookIcon = ({ size }: { size: number }) => (

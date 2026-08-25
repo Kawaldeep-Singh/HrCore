@@ -1,23 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Navbar2 } from "@/components/Navbar2";
-import { HeroSwitcher } from "@/components/HeroSwitcher";
-import { WhatWeOffer } from "@/components/WhatWeOffer";
-import { FloatingButtons } from "@/components/FloatingButtons";
-import { HRMSPortalFeatures } from "@/components/HRMSPortalFeatures";
-import { EmployeeApp } from "@/components/EmployeeApp";
-import { WhyHRCore } from "@/components/WhyHRCore";
-import { MoreThanHRMS } from "@/components/MoreThanHRMS";
-import { CTASection } from "@/components/CTASection";
-import { Footer } from "@/components/Footer";
+import { HeroSwitcher } from "@/components/home/HeroSwitcher";
+import { WhatWeOffer } from "@/components/home/WhatWeOffer";
+import { HRMSPortalFeatures } from "@/components/home/HRMSPortalFeatures";
+import { EmployeeApp } from "@/components/home/EmployeeApp";
+import { WhyHRCore } from "@/components/home/WhyHRCore";
+import { MoreThanHRMS } from "@/components/home/MoreThanHRMS";
+import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
   const [activeVariant, setActiveVariant] = useState<1 | 2 | 3>(3);
 
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-clip">
-      <Navbar2 activeVariant={activeVariant} />
+    <main className="min-h-screen overflow-x-clip">
       <HeroSwitcher activeVariant={activeVariant} setActiveVariant={setActiveVariant} />
       <WhatWeOffer />
       <HRMSPortalFeatures />
@@ -25,8 +21,6 @@ export default function Home() {
       <WhyHRCore />
       <MoreThanHRMS />
       <CTASection />
-      <Footer />
-      <FloatingButtons />
     </main>
   );
 }

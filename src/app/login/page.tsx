@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Mail, Lock, User, Phone, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { Logo } from "@/components/ui/Logo";
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);

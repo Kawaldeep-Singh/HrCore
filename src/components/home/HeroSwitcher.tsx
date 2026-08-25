@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { HeroSection2 } from "@/components/HeroSection2";
-import { HeroVariant } from "@/components/HeroVariant";
-import { HeroVariant3 } from "@/components/HeroVariant3";
+import { HeroSection2 } from "@/components/home/HeroSection2";
+import { HeroVariant } from "@/components/home/HeroVariant";
+import { HeroVariant3 } from "@/components/home/HeroVariant3";
 import { Settings2 } from "lucide-react";
 
 export function HeroSwitcher({ activeVariant, setActiveVariant }: { activeVariant: 1 | 2 | 3; setActiveVariant: (v: 1 | 2 | 3) => void }) {
