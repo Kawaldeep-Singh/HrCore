@@ -15,8 +15,8 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
   const headerRef = React.useRef<HTMLElement>(null);
   const { openModal } = useModal();
   const pathname = usePathname();
-  const initialBg = activeVariant === 3 ? "bg-[#060d10]" : "bg-transparent";
-  const initialBorder = activeVariant !== 3 ? "border-white/10" : "border-transparent";
+  const initialBg = "bg-[#060d10]";
+  const initialBorder = "border-white/10";
 
   React.useEffect(() => {
     const ctx = gsap.context(() => {
@@ -30,14 +30,8 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
               headerRef.current.classList.remove("bg-transparent", "bg-[#060d10]", "border-transparent", "border-white/10");
               headerRef.current.classList.add("bg-[#07120e]", "shadow-2xl", "border-white/5");
             } else {
-              if (activeVariant === 3) {
-                headerRef.current.classList.add("bg-[#060d10]", "border-transparent");
-                headerRef.current.classList.remove("border-white/10");
-              } else {
-                headerRef.current.classList.add("bg-transparent", "border-white/10");
-                headerRef.current.classList.remove("border-transparent");
-              }
-              headerRef.current.classList.remove("bg-[#07120e]", "shadow-2xl", "border-white/5");
+              headerRef.current.classList.add("bg-[#060d10]", "border-white/10");
+              headerRef.current.classList.remove("bg-transparent", "border-transparent", "bg-[#07120e]", "shadow-2xl", "border-white/5");
             }
           }
         },
