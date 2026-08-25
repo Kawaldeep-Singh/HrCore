@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Banknote, CheckCircle } from "lucide-react";
+import { TrendingUp, IndianRupee, CheckCircle } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
 export function HeroVariant() {
@@ -72,14 +72,14 @@ export function HeroVariant() {
             >
               <div className="flex justify-between items-center mb-6 border-b border-[#e2e2e2]/20 pb-4">
                 <span className="text-2xl font-semibold text-[#f9f9f9]">Payroll Summary</span>
-                <Banknote className="text-[#94f990] w-6 h-6" />
+                <IndianRupee className="text-[#94f990] w-6 h-6" />
               </div>
               
               <div className="space-y-6">
                 <div className="flex justify-between items-end">
                   <div>
                     <p className="text-sm text-[#c8c6c5] mb-1">Total Processed</p>
-                    <p className="text-5xl font-bold text-[#f9f9f9] tracking-tight">$1.2M</p>
+                    <p className="text-5xl font-bold text-[#f9f9f9] tracking-tight">₹1.2M</p>
                   </div>
                   <div className="bg-[#4caf50]/20 px-3 py-1.5 rounded-lg text-[#94f990] text-sm font-semibold flex items-center gap-1.5">
                     <TrendingUp className="w-4 h-4" /> +5.2%

@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import {
-  Users, Clock, Briefcase, DollarSign, GraduationCap,
-  Settings, Target, Receipt, PieChart, Headphones,
+  Users, Clock, Briefcase, IndianRupee, GraduationCap,
+  Settings, Target, Wallet, PieChart, Headphones,
 } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
@@ -17,10 +17,10 @@ const floatingIcons = [
   { Icon: Target,         top: "48%", left: "22%",  right: undefined, size: 22, delay: 1.1, dx: [0, -10, 8, 0],   dy: [0, -12, 10, 0],  dur: 9.5, opacity: 0.7 },
 
   // Scattered on the right
-  { Icon: DollarSign,     top: "20%", left: undefined, right: "18%", size: 30, delay: 0.3, dx: [0, -18, 14, 0],  dy: [0, 12, -15, 0],  dur: 10, opacity: 0.9 },
+  { Icon: IndianRupee,     top: "20%", left: undefined, right: "18%", size: 30, delay: 0.3, dx: [0, -18, 14, 0],  dy: [0, 12, -15, 0],  dur: 10, opacity: 0.9 },
   { Icon: Settings,       top: "40%", left: undefined, right: "8%",  size: 18, delay: 1.7, dx: [0, 10, -12, 0],  dy: [0, -10, 8, 0],   dur: 8.5, opacity: 0.5 },
   { Icon: Clock,          top: "60%", left: undefined, right: "25%", size: 24, delay: 0.6, dx: [0, 15, -10, 0],  dy: [0, 15, -12, 0],  dur: 12, opacity: 0.7 },
-  { Icon: Receipt,        top: "75%", left: undefined, right: "12%", size: 20, delay: 1.2, dx: [0, -12, 10, 0],  dy: [0, -14, 8, 0],   dur: 7.5, opacity: 0.8 },
+  { Icon: Wallet,        top: "75%", left: undefined, right: "12%", size: 20, delay: 1.2, dx: [0, -12, 10, 0],  dy: [0, -14, 8, 0],   dur: 7.5, opacity: 0.8 },
   { Icon: Headphones,     top: "12%", left: undefined, right: "6%",  size: 16, delay: 0.9, dx: [0, 8, -6, 0],    dy: [0, -8, 10, 0],   dur: 6,   opacity: 0.4 },
 ];
 

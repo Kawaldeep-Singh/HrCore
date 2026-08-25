@@ -16,6 +16,7 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
   const { openModal } = useModal();
   const pathname = usePathname();
   const initialBg = activeVariant === 3 ? "bg-[#060d10]" : "bg-transparent";
+  const initialBorder = activeVariant !== 3 ? "border-white/10" : "border-transparent";
 
   React.useEffect(() => {
     const ctx = gsap.context(() => {
@@ -26,16 +27,17 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
         onToggle: (self) => {
           if (headerRef.current) {
             if (self.isActive) {
-              headerRef.current.classList.remove("bg-transparent", "bg-[#060d10]", "border-transparent");
+              headerRef.current.classList.remove("bg-transparent", "bg-[#060d10]", "border-transparent", "border-white/10");
               headerRef.current.classList.add("bg-[#07120e]", "shadow-2xl", "border-white/5");
             } else {
               if (activeVariant === 3) {
-                headerRef.current.classList.add("bg-[#060d10]");
+                headerRef.current.classList.add("bg-[#060d10]", "border-transparent");
+                headerRef.current.classList.remove("border-white/10");
               } else {
-                headerRef.current.classList.add("bg-transparent");
+                headerRef.current.classList.add("bg-transparent", "border-white/10");
+                headerRef.current.classList.remove("border-transparent");
               }
               headerRef.current.classList.remove("bg-[#07120e]", "shadow-2xl", "border-white/5");
-              headerRef.current.classList.add("border-transparent");
             }
           }
         },
@@ -48,9 +50,9 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${initialBg}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${initialBg} ${initialBorder}`}
     >
-      <div className="w-[82%] mx-auto h-16 md:h-20 flex items-center justify-between">
+      <div className="w-[82%] mx-auto h-[68px] md:h-[84px] flex items-center justify-between">
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Logo className="w-[150px] md:w-[190px] h-[38px] md:h-[48px]" />
@@ -77,7 +79,10 @@ export function Navbar2({ activeVariant }: { activeVariant?: number }) {
         </nav>
 
         {/* Right: Login & CTA */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 lg:gap-6">
+          {/* Vertical Divider */}
+          <div className="hidden md:block w-[2px] h-6 bg-white/60 rounded-full"></div>
+          
           <Link
             href="/login"
             className="hidden sm:flex items-center gap-2 text-sm md:text-base font-medium text-white/90 hover:text-white transition-colors"

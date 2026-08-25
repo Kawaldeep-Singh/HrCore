@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { 
   ArrowRight, User, Bell, Users, CalendarX2, 
-  Banknote, Wallet, Database, Headset 
+  Banknote, Wallet, Database, Headset, MapPin, Plane, IndianRupee, PartyPopper, ListTodo 
 } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
@@ -144,118 +144,78 @@ export function HeroVariant3() {
             transition={{ duration: 0.8 }}
             className="relative h-[600px] flex items-center justify-center"
           >
-            {/* Central Smartphone Frame (Glassmorphism) */}
-            <div className="relative z-20 w-[280px] h-[580px] bg-white/80 backdrop-blur-xl border border-white rounded-[40px] shadow-[0_24px_48px_rgba(0,0,0,0.1)] p-4 float-slow glow-effect overflow-hidden">
+            {/* Central Smartphone Frame */}
+            <div className="relative z-20 w-[280px] h-[580px] rounded-[3rem] border-[8px] border-[#222] bg-[#111] shadow-2xl flex flex-col overflow-hidden ring-1 ring-white/10 float-slow glow-effect">
               
               {/* Phone Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#e2e2e2] rounded-b-xl z-30"></div>
-              
-              {/* App UI Mockup inside phone */}
-              <div className="w-full h-full bg-[#f9f9f9] rounded-[24px] border border-[#e8e8e8] overflow-hidden flex flex-col">
-                {/* Header */}
-                <div className="p-4 bg-[#006e1c] text-white flex justify-between items-center mt-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                      <User size={16} />
-                    </div>
-                    <span className="text-sm font-semibold">Dashboard</span>
-                  </div>
-                  <Bell size={20} />
-                </div>
-                
-                {/* Content Area */}
-                <div className="p-4 flex-grow flex flex-col gap-4 bg-[#f9f9f9]">
-                  {/* Stats Card */}
-                  <div className="bg-white p-3 rounded-lg border border-[#e2e2e2] flex justify-between items-center shadow-sm">
-                    <div>
-                      <p className="text-xs text-[#5f5e5e] mb-1 font-medium">Total Employees</p>
-                      <p className="text-xl font-bold text-[#1a1c1c]">1,248</p>
-                    </div>
-                    <div className="w-10 h-10 bg-[#d9e6da] rounded-full flex items-center justify-center text-[#4caf50]">
-                      <Users size={20} />
-                    </div>
-                  </div>
-                  
-                  {/* List Items */}
-                  <div className="flex flex-col gap-2">
-                    <p className="text-sm font-semibold text-[#3f4a3c] mb-1">Recent Activity</p>
-                    <div className="bg-white p-2 rounded-lg border border-[#e2e2e2] flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#ffdad6] rounded flex items-center justify-center text-[#93000a]">
-                        <CalendarX2 size={16} />
-                      </div>
-                      <div className="flex-grow">
-                        <p className="text-sm font-medium text-[#1a1c1c]">Leave Request</p>
-                        <p className="text-xs text-[#5f5e5e]">Sarah J.</p>
-                      </div>
-                      <span className="px-2 py-1 bg-[#e8e8e8] text-[#1a1c1c] rounded text-[10px] font-medium">Pending</span>
-                    </div>
-                    
-                    <div className="bg-white p-2 rounded-lg border border-[#e2e2e2] flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#d9e6da] rounded flex items-center justify-center text-[#006e1c]">
-                        <Banknote size={16} />
-                      </div>
-                      <div className="flex-grow">
-                        <p className="text-sm font-medium text-[#1a1c1c]">Payroll Processed</p>
-                        <p className="text-xs text-[#5f5e5e]">Q3 2024</p>
-                      </div>
-                      <span className="px-2 py-1 bg-[#78dc77]/20 text-[#4caf50] rounded text-[10px] font-bold">Done</span>
-                    </div>
-                  </div>
-                  
-                  {/* Chart Mockup */}
-                  <div className="mt-auto h-24 bg-white border border-[#e2e2e2] rounded-lg p-2 flex items-end gap-1 px-4 relative overflow-hidden">
-                    <div className="absolute top-2 left-2 text-xs font-semibold text-[#5f5e5e]">Growth</div>
-                    <div className="w-1/5 bg-[#4caf50]/30 h-1/3 rounded-t"></div>
-                    <div className="w-1/5 bg-[#4caf50]/50 h-1/2 rounded-t"></div>
-                    <div className="w-1/5 bg-[#4caf50]/70 h-[60%] rounded-t"></div>
-                    <div className="w-1/5 bg-[#4caf50]/90 h-[80%] rounded-t"></div>
-                    <div className="w-1/5 bg-[#4caf50] h-full rounded-t"></div>
-                  </div>
-                </div>
+              <div className="absolute top-0 inset-x-0 h-7 flex justify-center z-20">
+                <div className="w-32 h-6 bg-[#222] rounded-b-3xl"></div>
               </div>
+              
+              {/* Screen Content */}
+              <img src="/Mobile.png" alt="HRMS Mobile App" className="w-full h-full object-cover object-top p-2 rounded-[2.5rem]" />
             </div>
             
             {/* Orbital Icons (Bento/Glassmorphism style) */}
             
-            {/* Payroll Node */}
-            <div className="absolute top-[10%] left-[5%] md:left-[-10%] z-30 float-medium">
-              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-4 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#d9e6da] flex items-center justify-center text-[#4caf50]">
-                  <Wallet size={24} />
+            {/* 1. Top Left: Check-In */}
+            <div className="absolute top-[10%] left-[0%] md:left-[-15%] z-30 float-slow">
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#e8f5e9] flex items-center justify-center text-[#4caf50]">
+                  <MapPin size={20} />
                 </div>
-                <div>
-                  <p className="text-sm text-[#1a1c1c] font-medium">Automated</p>
-                  <p className="text-xl font-bold text-[#006e1c]">Payroll</p>
-                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pr-2">Check-In</p>
               </div>
-              <div className="hidden md:block absolute top-1/2 -right-16 w-16 h-0.5 bg-gradient-to-r from-[#006e1c]/40 to-transparent"></div>
             </div>
-            
-            {/* HRMS Node */}
-            <div className="absolute bottom-[20%] left-[-5%] md:left-[-15%] z-30 float-fast">
-              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-4 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#e8e8e8] flex items-center justify-center text-[#3f4a3c]">
-                  <Database size={24} />
+
+            {/* 2. Mid Left: Leave */}
+            <div className="absolute top-[45%] left-[-5%] md:left-[-25%] z-30 float-medium" style={{ animationDelay: '0.5s' }}>
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffebee] flex items-center justify-center text-[#f44336]">
+                  <Plane size={20} />
                 </div>
-                <div>
-                  <p className="text-sm text-[#1a1c1c] font-medium">Core Data</p>
-                  <p className="text-xl font-bold text-[#3f4a3c]">HRMS</p>
-                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pr-2">Leave</p>
               </div>
-              <div className="hidden md:block absolute top-1/2 -right-12 w-12 h-0.5 bg-gradient-to-r from-[#e2e2e2] to-transparent"></div>
             </div>
-            
-            {/* Services Node */}
-            <div className="absolute top-[40%] right-[-5%] md:right-[-15%] z-30 float-medium" style={{ animationDelay: "1s" }}>
-              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-4 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.08)] flex flex-col items-center gap-2 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#78dc77]/20 flex items-center justify-center text-[#006e1c]">
-                  <Headset size={24} />
+
+            {/* 3. Bottom Left: Payslips */}
+            <div className="absolute bottom-[15%] left-[0%] md:left-[-15%] z-30 float-fast" style={{ animationDelay: '1s' }}>
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#e3f2fd] flex items-center justify-center text-[#2196f3]">
+                  <IndianRupee size={20} />
                 </div>
-                <div>
-                  <p className="text-xl font-bold text-[#1a1c1c] leading-tight">HR<br/>Services</p>
-                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pr-2">Payslips</p>
               </div>
-              <div className="hidden md:block absolute top-1/2 -left-12 w-12 h-0.5 bg-gradient-to-l from-[#006e1c]/20 to-transparent"></div>
+            </div>
+
+            {/* 4. Top Right: Holidays */}
+            <div className="absolute top-[15%] right-[0%] md:right-[-5%] z-30 float-medium" style={{ animationDelay: '1.5s' }}>
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex flex-row-reverse items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#fce4ec] flex items-center justify-center text-[#e91e63]">
+                  <PartyPopper size={20} />
+                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pl-2">Holidays</p>
+              </div>
+            </div>
+
+            {/* 5. Mid Right: Tasks */}
+            <div className="absolute top-[50%] right-[-5%] md:right-[-15%] z-30 float-fast" style={{ animationDelay: '2s' }}>
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex flex-row-reverse items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#fff3e0] flex items-center justify-center text-[#ff9800]">
+                  <ListTodo size={20} />
+                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pl-2">Tasks</p>
+              </div>
+            </div>
+
+            {/* 6. Bottom Right: HR Support */}
+            <div className="absolute bottom-[10%] right-[0%] md:right-[-5%] z-30 float-slow" style={{ animationDelay: '2.5s' }}>
+              <div className="bg-white/90 backdrop-blur-md border border-[#e2e2e2] p-3 rounded-xl shadow-lg flex flex-row-reverse items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f3e5f5] flex items-center justify-center text-[#9c27b0]">
+                  <Headset size={20} />
+                </div>
+                <p className="text-sm font-bold text-[#1a1c1c] pl-2">HR Support</p>
+              </div>
             </div>
             
             {/* Decorative Background Circles */}
