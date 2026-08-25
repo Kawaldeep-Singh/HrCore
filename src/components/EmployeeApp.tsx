@@ -86,7 +86,9 @@ export function EmployeeApp() {
               </div>
               
               {/* Screen Content */}
-              <img src="/Mobile.png" alt="Employee HR App" className="w-full h-full object-cover object-top p-2 rounded-[2.5rem]" />
+              <div className="w-full h-full p-1 pt-7">
+                <img src="/Mobile.png" alt="Employee HR App" className="w-full h-auto object-cover object-top rounded-[1.5rem]" />
+              </div>
             </div>
           </motion.div>
 
