@@ -19,20 +19,24 @@ export function HRMSHero() {
         <div className="flex flex-col lg:block relative items-center gap-12 lg:gap-0">
           
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-full lg:w-[55%] xl:w-[50%] text-center lg:text-left relative z-20 lg:py-20"
-          >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-[#e6f0e8] border border-[#006e1c]/40 text-[#003b0f] text-sm font-semibold mb-6">
-              HRMS Portal
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-[#041208] leading-[1.1] tracking-tight">
-              Complete <br className="hidden lg:block" />
-              HR Management. <br />
-              <span className="text-[#006e1c]">Simplified.</span>
-            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full lg:w-[55%] xl:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left relative z-20 lg:py-20"
+            >
+              <div className="inline-block px-4 py-1.5 rounded-full bg-[#e6f0e8] border border-[#006e1c]/40 text-[#003b0f] text-sm font-semibold mb-6">
+                HRMS Portal
+              </div>
+              <div className="mb-6 font-bold tracking-tight text-[#041208] flex flex-col items-center w-full">
+                <div className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-2 text-center w-full">
+                  HRMS. Payroll. HR Services.
+                </div>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] flex flex-col items-center w-full mt-2">
+                  <div className="text-center w-full">All</div>
+                  <div className="text-center w-full mt-2">Under One Roof.</div>
+                </h1>
+              </div>
             <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Manage your people, processes, and everyday HR operations with one powerful platform built for the complete employee journey.
             </p>

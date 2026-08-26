@@ -11,7 +11,7 @@ export function HeroVariant() {
       {/* Main Content */}
       <main className="flex-grow relative flex items-center justify-center py-20 lg:py-32">
         {/* Background Pattern */}
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-15"
           style={{
             backgroundColor: "#1a1c1c",
@@ -28,9 +28,9 @@ export function HeroVariant() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1c1c] z-0" />
 
         <div className="w-[82%] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          
+
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -54,14 +54,14 @@ export function HeroVariant() {
           </motion.div>
 
           {/* Visual Content (Bento/Glassmorphism) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative w-full h-[500px] flex items-center justify-center perspective-[1000px]"
           >
             {/* Main Dashboard Card */}
-            <div 
+            <div
               className="rounded-2xl p-8 w-full max-w-[500px] shadow-[0_12px_32px_rgba(0,0,0,0.5)] transform rotate-y-[-5deg] rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-500 ease-out z-20"
               style={{
                 background: "rgba(255, 255, 255, 0.05)",
@@ -74,7 +74,7 @@ export function HeroVariant() {
                 <span className="text-2xl font-semibold text-[#f9f9f9]">Payroll Summary</span>
                 <IndianRupee className="text-[#94f990] w-6 h-6" />
               </div>
-              
+
               <div className="space-y-6">
                 <div className="flex justify-between items-end">
                   <div>
@@ -99,7 +99,7 @@ export function HeroVariant() {
             </div>
 
             {/* Floating Employee Card */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute bottom-10 -left-6 md:-left-10 rounded-xl p-4 shadow-[0_12px_32px_rgba(0,0,0,0.5)] z-30"
@@ -124,7 +124,7 @@ export function HeroVariant() {
             </motion.div>
 
             {/* Floating Alert Card */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute top-10 -right-2 md:-right-5 rounded-xl p-4 shadow-[0_12px_32px_rgba(0,0,0,0.5)] z-30"
