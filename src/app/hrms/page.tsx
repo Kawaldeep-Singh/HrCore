@@ -1,17 +1,23 @@
 "use client";
 
-import React from "react";
+import { HRMSHero } from "@/components/hrms/HRMSHero";
+import { EmployeeJourney } from "@/components/hrms/EmployeeJourney";
+import { PowerfulHRMS } from "@/components/hrms/PowerfulHRMS";
+import { EmployeeApp } from "@/components/home/EmployeeApp";
+import { TrustedHR } from "@/components/hrms/TrustedHR";
+import { WhyHRCore } from "@/components/home/WhyHRCore";
+import { HRMSCTA } from "@/components/hrms/HRMSCTA";
 
 export default function HRMSPage() {
   return (
-    <section className="pt-40 pb-20 md:pt-48 md:pb-32 text-center min-h-[70vh] flex items-center justify-center relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#006e1c]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="relative z-10 w-[82%] mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">HRMS</h1>
-        <p className="text-xl text-[#c8c6c5] max-w-2xl mx-auto">
-          Smart HR technology to simplify and automate everyday HR processes. This page is currently under construction.
-        </p>
-      </div>
-    </section>
+    <main className="min-h-screen overflow-x-clip pt-10">
+      <HRMSHero />
+      <EmployeeJourney />
+      <PowerfulHRMS />
+      <EmployeeApp />
+      <TrustedHR />
+      <WhyHRCore />
+      <HRMSCTA />
+    </main>
   );
 }
