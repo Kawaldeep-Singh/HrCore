@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-3xl font-bold text-[#041208] mt-12 mb-6">Changes to This Policy</h2>
             <p className="mb-10">
-              HR Core may update this Privacy Policy from time to time. Any changes will be published on this page. We encourage you to review this Privacy Policy periodically.
+              HR Core may update this Privacy Policy from time to time. Any changes will be published
             </p>
           </motion.div>
         </div>

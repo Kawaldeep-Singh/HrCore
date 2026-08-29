@@ -24,9 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${poppins.className} h-full antialiased`}
+      className={`${poppins.variable} ${poppins.className} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#040d08] text-[#f9f9f9] selection:bg-[#4caf50]/30" suppressHydrationWarning>
+      <body className="flex flex-col bg-[#040d08] text-[#f9f9f9] selection:bg-[#4caf50]/30" suppressHydrationWarning>
         <ModalProvider>
           <SmoothScroll>
             <Navbar2 />

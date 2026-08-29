@@ -2,18 +2,16 @@
 
 import { useState } from "react";
 import { HeroSection2 } from "@/components/home/HeroSection2";
-import { HeroVariant } from "@/components/home/HeroVariant";
 import { HeroVariant3 } from "@/components/home/HeroVariant3";
 import { Settings2 } from "lucide-react";
 
-export function HeroSwitcher({ activeVariant, setActiveVariant }: { activeVariant: 1 | 2 | 3; setActiveVariant: (v: 1 | 2 | 3) => void }) {
+export function HeroSwitcher({ activeVariant, setActiveVariant }: { activeVariant: 1 | 3; setActiveVariant: (v: 1 | 3) => void }) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="relative">
       {/* Render the selected Hero section */}
       {activeVariant === 1 && <HeroSection2 />}
-      {activeVariant === 2 && <HeroVariant />}
       {activeVariant === 3 && <HeroVariant3 />}
 
       {/* Fixed Switcher Panel on the right */}
@@ -52,16 +50,6 @@ export function HeroSwitcher({ activeVariant, setActiveVariant }: { activeVarian
                 V 1
               </button>
               <button
-                onClick={() => setActiveVariant(2)}
-                className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                  activeVariant === 2
-                    ? "bg-[#16a34a] text-white shadow-lg shadow-[#16a34a]/30 scale-[1.02]"
-                    : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                V 2
-              </button>
-              <button
                 onClick={() => setActiveVariant(3)}
                 className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   activeVariant === 3
@@ -69,7 +57,7 @@ export function HeroSwitcher({ activeVariant, setActiveVariant }: { activeVarian
                     : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                V 3
+                V 2
               </button>
             </div>
 

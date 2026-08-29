@@ -10,7 +10,7 @@ import { MoreThanHRMS } from "@/components/home/MoreThanHRMS";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
-  const [activeVariant, setActiveVariant] = useState<1 | 2 | 3>(3);
+  const [activeVariant, setActiveVariant] = useState<1 | 3>(3);
 
   return (
     <main className="min-h-screen overflow-x-clip">

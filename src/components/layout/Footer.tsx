@@ -166,7 +166,7 @@ export function Footer() {
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
             <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
-            <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>
+            {/* <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link> */}
           </div>
         </motion.div>
       </motion.div>
