@@ -32,7 +32,8 @@ export function PayrollWhyOutsource() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, delay: 0.1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl md:leading-[1.1] font-bold text-[#041208] mb-6"
             >
               Why Let Payroll Take Up Your Time?
@@ -40,7 +41,8 @@ export function PayrollWhyOutsource() {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, delay: 0.2 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
               className="text-gray-600 text-lg leading-relaxed mb-8"
             >
               You're offering Payroll Services, not just payroll software. By outsourcing to experts, you eliminate the stress of processing, compliance, and employee queries.
