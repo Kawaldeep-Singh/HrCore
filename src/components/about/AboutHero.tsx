@@ -10,8 +10,8 @@ export function AboutHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/indian_about_hero_bg.jpg"
-          alt="HR Core Team Support"
+          src="/hr_core_about_meeting_indian.jpg"
+          alt="HR Core Team Meeting"
           fill
           className="object-cover object-center opacity-40"
           priority

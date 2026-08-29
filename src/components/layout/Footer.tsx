@@ -162,9 +162,9 @@ export function Footer() {
         >
           <p className="text-sm text-gray-500 font-medium">© 2026 HR Core. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-gray-500 font-medium">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
-            <Link href="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
             <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>
           </div>

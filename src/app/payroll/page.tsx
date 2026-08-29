@@ -1,17 +1,31 @@
-"use client";
+import { Metadata } from "next";
+import { PayrollHero } from "@/components/payroll/PayrollHero";
+import { PayrollIntro } from "@/components/payroll/PayrollIntro";
+import { PayrollServices } from "@/components/payroll/PayrollServices";
+import { PayrollProcess } from "@/components/payroll/PayrollProcess";
+import { PayrollWhyOutsource } from "@/components/payroll/PayrollWhyOutsource";
+import { PayrollConnection } from "@/components/payroll/PayrollConnection";
+import { PayrollAudience } from "@/components/payroll/PayrollAudience";
+import { PayrollStats } from "@/components/payroll/PayrollStats";
+import { PayrollCTA } from "@/components/payroll/PayrollCTA";
 
-import React from "react";
+export const metadata: Metadata = {
+  title: "Payroll Services | HR Core",
+  description: "Complete HR Management. Simplified. From salary processing and payslips to compliance and employee support, we take care of your payroll so you can focus on your business.",
+};
 
 export default function PayrollPage() {
   return (
-    <section className="pt-40 pb-20 md:pt-48 md:pb-32 text-center min-h-[70vh] flex items-center justify-center relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#006e1c]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="relative z-10 w-[82%] mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Payroll</h1>
-        <p className="text-xl text-[#c8c6c5] max-w-2xl mx-auto">
-          Reliable payroll support with accuracy, compliance, and expertise. This page is currently under construction.
-        </p>
-      </div>
-    </section>
+    <main className="min-h-screen bg-white">
+      <PayrollHero />
+      <PayrollIntro />
+      <PayrollServices />
+      <PayrollProcess />
+      <PayrollWhyOutsource />
+      <PayrollConnection />
+      <PayrollAudience />
+      <PayrollStats />
+      <PayrollCTA />
+    </main>
   );
 }

@@ -8,7 +8,7 @@ export function HRMSHero() {
   const { openModal } = useModal();
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 lg:min-h-[85vh] flex flex-col justify-center bg-[#fbfdfa]">
+    <section className="relative pt-12 pb-16 md:pt-14 md:pb-24 lg:min-h-[85vh] flex flex-col justify-center bg-[#fbfdfa]">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#006e1c]/20 rounded-full blur-[120px]" />
@@ -28,13 +28,10 @@ export function HRMSHero() {
               <div className="inline-block px-4 py-1.5 rounded-full bg-[#e6f0e8] border border-[#006e1c]/40 text-[#003b0f] text-sm font-semibold mb-6">
                 HRMS Portal
               </div>
-              <div className="mb-6 font-bold tracking-tight text-[#041208] flex flex-col items-center w-full">
-                <div className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-2 text-center w-full">
-                  HRMS. Payroll. HR Services.
-                </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] flex flex-col items-center w-full mt-2">
-                  <div className="text-center w-full">All</div>
-                  <div className="text-center w-full mt-2">Under One Roof.</div>
+              <div className="mb-6 font-bold tracking-tight text-[#041208] flex flex-col w-full">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] flex flex-col w-full mt-2">
+                  <div className="w-full">Complete HR Management.</div>
+                  <div className="w-full mt-2 text-[#006e1c]">Simplified.</div>
                 </h1>
               </div>
             <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
