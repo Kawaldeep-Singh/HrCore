@@ -27,7 +27,7 @@ export function ServicesHowWeWork() {
   ];
 
   return (
-    <section className="py-24 bg-[#0a0f12] text-white">
+    <section className="py-24 bg-[#05160c] text-white">
       <div className="w-[82%] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
@@ -69,7 +69,7 @@ export function ServicesHowWeWork() {
               className={`relative group p-8 rounded-3xl flex flex-col h-full border ${
                 opt.highlight 
                   ? 'bg-gradient-to-b from-[#16a34a]/10 to-transparent border-[#16a34a]/30 scale-100 md:scale-105 z-10 shadow-[0_0_40px_rgba(22,163,74,0.1)] hover:shadow-[0_0_50px_rgba(22,163,74,0.2)] hover:-translate-y-2' 
-                  : 'bg-[#11181c] border-gray-800 hover:border-[#16a34a]/30 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(22,163,74,0.05)]'
+                  : 'bg-[#082212] border-[#16a34a]/20 hover:border-[#16a34a]/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(22,163,74,0.05)]'
               } transition-all duration-500`}
             >
               {opt.highlight && (
@@ -79,7 +79,7 @@ export function ServicesHowWeWork() {
               )}
               
               <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${
-                opt.highlight ? 'bg-[#16a34a]/20' : 'bg-gray-800 group-hover:bg-[#16a34a]/10'
+                opt.highlight ? 'bg-[#16a34a]/20' : 'bg-[#0a2b16] group-hover:bg-[#16a34a]/10'
               }`}>
                 {opt.icon}
               </div>

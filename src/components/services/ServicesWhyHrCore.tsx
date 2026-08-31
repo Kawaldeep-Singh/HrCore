@@ -28,7 +28,7 @@ export function ServicesWhyHrCore() {
   ];
 
   return (
-    <section className="py-24 bg-[#0a0f12] text-white relative overflow-hidden">
+    <section className="py-24 bg-[#05160c] text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -65,7 +65,7 @@ export function ServicesWhyHrCore() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-[#11181c] p-6 rounded-2xl border border-gray-800 hover:border-[#16a34a]/40 hover:-translate-y-1 hover:bg-[#131b20] hover:shadow-[0_8px_30px_rgba(22,163,74,0.06)] transition-all duration-300 group ${
+                className={`bg-[#082212] p-6 rounded-2xl border border-[#16a34a]/20 hover:border-[#16a34a]/40 hover:-translate-y-1 hover:bg-[#0a2b16] hover:shadow-[0_8px_30px_rgba(22,163,74,0.06)] transition-all duration-300 group ${
                   index === reasons.length - 1 ? 'sm:col-span-2' : ''
                 }`}
               >

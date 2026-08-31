@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function ServicesIntro() {
   return (
-    <section className="py-24 bg-[#0a0f12] text-white relative overflow-hidden">
+    <section className="py-24 bg-[#05160c] text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[50%] bg-[#16a34a] opacity-[0.03] blur-[100px] pointer-events-none" />
       

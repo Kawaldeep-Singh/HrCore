@@ -6,7 +6,7 @@ import { ArrowRight, PhoneCall } from "lucide-react";
 
 export function ServicesFinalCta() {
   return (
-    <section className="py-24 bg-[#0a0f12] text-white relative overflow-hidden">
+    <section className="py-24 bg-[#05160c] text-white relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#16a34a] opacity-[0.08] blur-[120px] pointer-events-none rounded-full" />
       
@@ -17,7 +17,7 @@ export function ServicesFinalCta() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#11181c] border border-gray-800 p-10 md:p-16 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
+          className="bg-[#082212] border border-[#16a34a]/20 p-10 md:p-16 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
         >
           {/* Decorative lines inside box */}
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:10px_10px]" />
