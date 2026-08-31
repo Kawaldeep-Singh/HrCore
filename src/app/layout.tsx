@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ModalProvider } from "@/context/ModalContext";
-import { ContactModal } from "@/components/ui/ContactModal";
+import { GlobalLayoutWrapper } from "@/components/layout/GlobalLayoutWrapper";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -14,11 +13,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "HR Core - Human Resources & Payroll Solutions",
   description: "Enhancing Human Resources Capabilities, Achieving Business Success.",
+  icons: {
+    icon: "/favicn.jpeg",
+  },
 };
-
-import { Navbar2 } from "@/components/layout/Navbar2";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingButtons } from "@/components/layout/FloatingButtons";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,13 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="flex flex-col bg-[#040d08] text-[#f9f9f9] selection:bg-[#4caf50]/30" suppressHydrationWarning>
         <ModalProvider>
-          <SmoothScroll>
-            <Navbar2 />
+          <GlobalLayoutWrapper>
             {children}
-            <Footer />
-          </SmoothScroll>
-          <ContactModal />
-          <FloatingButtons />
+          </GlobalLayoutWrapper>
         </ModalProvider>
       </body>
     </html>

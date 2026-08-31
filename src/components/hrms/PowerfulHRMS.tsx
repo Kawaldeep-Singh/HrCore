@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Users, Clock, UserPlus, FileText, 
-  BookOpen, Smartphone, Target, CreditCard, 
-  PieChart, MessageCircle 
+import {
+  Users, Clock, UserPlus, FileText,
+  BookOpen, Smartphone, Target, CreditCard,
+  PieChart, MessageCircle
 } from "lucide-react";
 
 export function PowerfulHRMS() {
@@ -83,21 +83,21 @@ export function PowerfulHRMS() {
 
   return (
     <section className="py-24 bg-[#fbfdfa] border-t border-gray-100 relative overflow-hidden">
-      
+
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#006e1c]/20 rounded-full blur-[150px] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#003b0f]/10 rounded-full blur-[150px] translate-x-1/2 pointer-events-none" />
 
       <div className="w-[82%] mx-auto relative z-10">
         <div className="text-center mb-16 xl:mb-20">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-block px-4 py-1.5 rounded-full bg-[#e6f0e8] border border-[#006e1c]/20 text-[#006e1c] text-sm font-semibold mb-6"
           >
             Core Modules
-          </motion.div>
-          <motion.h2 
+          </motion.div> */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -105,7 +105,7 @@ export function PowerfulHRMS() {
           >
             Meet Our Powerful HRMS
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -128,10 +128,10 @@ export function PowerfulHRMS() {
             >
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-[#006e1c] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Background Light Effect on Hover */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#006e1c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
+
               {/* Subtle Number in Top Right */}
               <span className="absolute top-4 right-5 text-3xl xl:text-4xl font-black text-gray-100 select-none group-hover:text-[#006e1c]/10 transition-colors duration-500">
                 {feature.id}
@@ -143,14 +143,14 @@ export function PowerfulHRMS() {
                   <div className="absolute inset-0 rounded-2xl bg-[#006e1c] blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
                   <feature.icon className="text-[#006e1c] group-hover:text-white transition-colors duration-500 relative z-10" size={24} />
                 </div>
-                
+
                 <h3 className="text-base xl:text-lg font-bold text-gray-900 mb-3 leading-tight">{feature.title}</h3>
-                
+
                 {/* Subtitle Badge */}
                 <div className="bg-[#f8faf9] group-hover:bg-[#e6f0e8] text-[#006e1c] px-3 py-1.5 rounded-full text-[9px] xl:text-[10px] font-bold uppercase tracking-wider mb-4 transition-colors duration-300">
                   {feature.subtitle}
                 </div>
-                
+
                 <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {feature.description}
                 </p>
