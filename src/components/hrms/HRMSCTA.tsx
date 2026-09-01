@@ -39,7 +39,10 @@ export function HRMSCTA() {
           >
             Book a Demo <ArrowRight size={18} />
           </button>
-          <button className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold text-sm md:text-base px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm">
+          <button 
+            onClick={openModal}
+            className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold text-sm md:text-base px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm"
+          >
             Talk to an Expert
           </button>
         </div>

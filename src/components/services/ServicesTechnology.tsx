@@ -30,7 +30,7 @@ export function ServicesTechnology() {
             transition={{ delay: 0.1 }}
             className="text-gray-600 text-lg md:text-xl leading-relaxed"
           >
-            HR doesn't have to choose between people and technology. <br className="hidden md:block" />
+            HR doesn&apos;t have to choose between people and technology. <br className="hidden md:block" />
             With HR Core, your HR services are supported by modern HR technology, helping teams keep employee information, processes, communication, and HR operations more connected.
           </motion.p>
         </div>

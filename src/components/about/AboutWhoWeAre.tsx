@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 
 export function AboutWhoWeAre() {
   return (

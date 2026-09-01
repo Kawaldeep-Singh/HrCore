@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 export function PayrollCTA() {
+  const { openModal } = useModal();
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="w-[82%] mx-auto relative z-10">
@@ -30,10 +33,16 @@ export function PayrollCTA() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto bg-white text-[#006e1c] font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2">
+              <button 
+                onClick={openModal}
+                className="w-full sm:w-auto bg-white text-[#006e1c] font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
+              >
                 <MessageCircle size={18} /> Talk to an Expert
               </button>
-              <button className="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all flex items-center justify-center gap-2">
+              <button 
+                onClick={openModal}
+                className="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all flex items-center justify-center gap-2"
+              >
                 Get Started <ArrowRight size={18} />
               </button>
             </div>

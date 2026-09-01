@@ -133,7 +133,7 @@ export function PayrollConnection() {
               Payroll That Connects With HR.
             </h2>
             <p className="text-xl font-medium text-gray-300 mb-6 font-mono">
-              // Because payroll doesn't work alone.
+              {"// Because payroll doesn't work alone."}
             </p>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
               Employee information, attendance, leave, and payroll work together seamlessly. This unified flow drastically reduces duplicate data entry, ensuring zero errors and saving countless hours.
@@ -146,7 +146,7 @@ export function PayrollConnection() {
               <div>
                 <h4 className="font-bold text-white mb-1 tracking-wide">A Single Source of Truth</h4>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Unlike standalone payroll outsourcing companies, HR Core's architecture creates a connected experience that eliminates manual data transfers and ensures perfect accuracy.
+                  Unlike standalone payroll outsourcing companies, HR Core&apos;s architecture creates a connected experience that eliminates manual data transfers and ensures perfect accuracy.
                 </p>
               </div>
             </div>

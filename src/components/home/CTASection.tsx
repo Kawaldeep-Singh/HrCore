@@ -34,7 +34,7 @@ export function CTASection() {
           <button onClick={openModal} className="w-full sm:w-auto bg-[#a3e635] text-[#041208] font-bold text-sm md:text-base px-6 py-3 rounded-xl hover:bg-[#86c429] hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(163,230,53,0.2)]">
             Book a Demo
           </button>
-          <button className="w-full sm:w-auto bg-white/5 border border-white/10 text-white font-bold text-sm md:text-base px-6 py-3 rounded-xl hover:bg-white/10 hover:scale-105 active:scale-95 transition-all">
+          <button onClick={openModal} className="w-full sm:w-auto bg-white/5 border border-white/10 text-white font-bold text-sm md:text-base px-6 py-3 rounded-xl hover:bg-white/10 hover:scale-105 active:scale-95 transition-all">
             Talk to an Expert
           </button>
         </div>

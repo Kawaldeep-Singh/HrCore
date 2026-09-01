@@ -45,7 +45,7 @@ export function PayrollWhyOutsource() {
               transition={{ delay: 0.2 }}
               className="text-gray-600 text-lg leading-relaxed mb-8"
             >
-              You're offering Payroll Services, not just payroll software. By outsourcing to experts, you eliminate the stress of processing, compliance, and employee queries.
+              You&apos;re offering Payroll Services, not just payroll software. By outsourcing to experts, you eliminate the stress of processing, compliance, and employee queries.
             </motion.p>
           </div>
 

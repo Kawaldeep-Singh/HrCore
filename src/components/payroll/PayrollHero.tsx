@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, CheckCircle, IndianRupee, Clock, ChevronRight } from "lucide-react";
+import { ArrowRight, FileText, CheckCircle, IndianRupee, Clock } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 export function PayrollHero() {
+  const { openModal } = useModal();
+
   return (
     <section className="relative pt-12 pb-16 md:pt-14 md:pb-24 lg:min-h-[85vh] flex flex-col justify-center bg-[#fbfdfa] overflow-hidden">
       {/* Background Effects */}
@@ -37,11 +40,15 @@ export function PayrollHero() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
               <button 
+                onClick={openModal}
                 className="w-full sm:w-auto bg-[#006e1c] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#005a17] hover:scale-105 active:scale-95 transition-all shadow-[0_10px_30px_rgba(0,110,28,0.3)] flex items-center justify-center gap-2"
               >
                 Book a Consultation <ArrowRight size={18} />
               </button>
-              <button className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm">
+              <button 
+                onClick={openModal}
+                className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm"
+              >
                 Talk to an Expert
               </button>
             </div>

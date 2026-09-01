@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Users, Clock, Briefcase, IndianRupee, GraduationCap,
   Settings, Target, Receipt, BarChart3, Headphones,
-  type LucideIcon,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);

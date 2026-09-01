@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useModal } from "@/context/ModalContext";
-import { ArrowRight, Users, Briefcase, Calendar, TrendingUp, CheckCircle, Activity } from "lucide-react";
+import { ArrowRight, Users, Briefcase, Calendar, CheckCircle, Activity } from "lucide-react";
 
 export function HRMSHero() {
   const { openModal } = useModal();
@@ -45,7 +45,10 @@ export function HRMSHero() {
               >
                 Book a Demo <ArrowRight size={18} />
               </button>
-              <button className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm">
+              <button 
+                onClick={openModal}
+                className="w-full sm:w-auto bg-white border border-gray-300 text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-sm"
+              >
                 Talk to an Expert
               </button>
             </div>

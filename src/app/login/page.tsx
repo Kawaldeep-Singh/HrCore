@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Mail, Lock, User, Phone, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Logo } from "@/components/ui/Logo";
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -54,7 +53,7 @@ export default function LoginPage() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] to-[#93d937]">workforce</span> today.
               </h1>
               <p className="text-gray-300 text-lg lg:text-xl max-w-md leading-relaxed">
-                Streamline your HR processes, manage payroll, and unlock your team's true potential with HR Core.
+                Streamline your HR processes, manage payroll, and unlock your team&apos;s true potential with HR Core.
               </p>
             </motion.div>
 
@@ -271,7 +270,7 @@ export default function LoginPage() {
 
           {/* Bottom text */}
           <p className="mt-5 text-center text-sm text-gray-500">
-            By continuing, you agree to our <a href="#" className="text-gray-300 hover:text-white transition-colors underline decoration-gray-600 underline-offset-2">Terms of Service</a> and <a href="#" className="text-gray-300 hover:text-white transition-colors underline decoration-gray-600 underline-offset-2">Privacy Policy</a>.
+            By continuing, you agree to our <Link href="/terms-conditions" className="text-gray-300 hover:text-white transition-colors underline decoration-gray-600 underline-offset-2">Terms of Service</Link> and <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors underline decoration-gray-600 underline-offset-2">Privacy Policy</Link>.
           </p>
 
         </motion.div>

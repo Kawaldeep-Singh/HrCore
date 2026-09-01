@@ -83,7 +83,12 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-3xl font-bold text-[#041208] mt-12 mb-6">Changes to This Policy</h2>
             <p className="mb-10">
-              HR Core may update this Privacy Policy from time to time. Any changes will be published
+              HR Core may update this Privacy Policy from time to time. Any changes will be published directly on this page with an updated revision date. We encourage you to review this policy periodically to stay informed about how we protect your information.
+            </p>
+
+            <h2 className="text-3xl font-bold text-[#041208] mt-12 mb-6">Contact Us</h2>
+            <p className="mb-10">
+              If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact our privacy compliance team at <a href="mailto:sales@hrcore.in" className="text-[#16a34a] font-semibold hover:underline">sales@hrcore.in</a> or call us at <a href="tel:+919211042767" className="text-[#16a34a] font-semibold hover:underline">+91-9211042767</a>.
             </p>
           </motion.div>
         </div>

@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowRight, User, Bell, Users, CalendarX2,
-  Banknote, Wallet, Database, Headset, MapPin, Plane, IndianRupee, PartyPopper, ListTodo
+  ArrowRight, Headset, MapPin, Plane, IndianRupee, PartyPopper, ListTodo
 } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 function useCountUp(end: number, duration: number = 2000, start: boolean = false) {
@@ -9,7 +9,6 @@ function useCountUp(end: number, duration: number = 2000, start: boolean = false
 
   useEffect(() => {
     if (!start) {
-      setCount(0);
       return;
     }
     

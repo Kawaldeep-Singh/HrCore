@@ -37,7 +37,7 @@ export function Footer() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as any } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
@@ -70,10 +70,18 @@ export function Footer() {
             </p>
 
             <div className="flex gap-4">
-              {[FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
+              {[
+                { Icon: FacebookIcon, label: "Facebook", href: "https://facebook.com" },
+                { Icon: TwitterIcon, label: "Twitter", href: "https://twitter.com" },
+                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
+                { Icon: InstagramIcon, label: "Instagram", href: "https://instagram.com" },
+              ].map(({ Icon, label, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                   className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#a3e635]/20 hover:border-[#a3e635]/50 hover:text-[#a3e635] transition-all duration-300 hover:-translate-y-1"
                 >
                   <Icon size={18} />
@@ -88,15 +96,22 @@ export function Footer() {
               HRMS
             </h4>
             <ul className="space-y-3">
-              {["HRMS Overview", "Features", "HRMS Portal", "Employee App", "Why HRMS", "Book a Demo"].map((item) => (
-                <li key={item}>
-                  {item === "Book a Demo" ? (
+              {[
+                { label: "HRMS Overview", href: "/hrms" },
+                { label: "Features", href: "/hrms" },
+                { label: "HRMS Portal", href: "/hrms" },
+                { label: "Employee App", href: "/hrms" },
+                { label: "Why HRMS", href: "/hrms" },
+                { label: "Book a Demo", href: "" },
+              ].map((item) => (
+                <li key={item.label}>
+                  {item.label === "Book a Demo" ? (
                     <button onClick={openModal} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
-                      <span className="text-sm font-medium">{item}</span>
+                      <span className="text-sm font-medium">{item.label}</span>
                     </button>
                   ) : (
-                    <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
-                      <span className="text-sm font-medium">{item}</span>
+                    <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                      <span className="text-sm font-medium">{item.label}</span>
                     </Link>
                   )}
                 </li>
@@ -110,10 +125,17 @@ export function Footer() {
               Payroll & HR Services
             </h4>
             <ul className="space-y-3">
-              {["Payroll Services", "HR Services", "Recruitment", "HR Operations", "HR Compliance", "HR Consulting"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
-                    <span className="text-sm font-medium">{item}</span>
+              {[
+                { label: "Payroll Services", href: "/payroll" },
+                { label: "HR Services", href: "/services" },
+                { label: "Recruitment", href: "/services" },
+                { label: "HR Operations", href: "/services" },
+                { label: "HR Compliance", href: "/services" },
+                { label: "HR Consulting", href: "/services" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                    <span className="text-sm font-medium">{item.label}</span>
                   </Link>
                 </li>
               ))}
@@ -126,10 +148,15 @@ export function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {["Home", "About Us", "Contact Us", "Careers"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
-                    <span className="text-sm font-medium">{item}</span>
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Contact Us", href: "/contact-us" },
+                { label: "Client Login", href: "/login" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                    <span className="text-sm font-medium">{item.label}</span>
                   </Link>
                 </li>
               ))}

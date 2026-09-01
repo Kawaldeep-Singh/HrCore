@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Calculator, Users } from "lucide-react";
 
 export function MoreThanHRMS() {
@@ -9,11 +10,13 @@ export function MoreThanHRMS() {
       title: "Payroll Services",
       desc: "Payroll, handled with expertise.",
       icon: <Calculator size={32} className="text-[#16a34a]" />,
+      href: "/payroll",
     },
     {
       title: "HR Services",
       desc: "People, processes, and HR expertise.",
       icon: <Users size={32} className="text-[#16a34a]" />,
+      href: "/services",
     },
   ];
 
@@ -60,9 +63,9 @@ export function MoreThanHRMS() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
               <p className="text-gray-600 text-lg font-medium mb-8 flex-1">{item.desc}</p>
               
-              <a href="#" className="inline-flex items-center gap-2 text-[#16a34a] font-semibold text-lg hover:gap-4 transition-all w-fit">
+              <Link href={item.href} className="inline-flex items-center gap-2 text-[#16a34a] font-semibold text-lg hover:gap-4 transition-all w-fit">
                 Explore <ArrowRight size={20} />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
