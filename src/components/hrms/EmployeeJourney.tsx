@@ -51,7 +51,7 @@ export function EmployeeJourney() {
           {/* Connecting Line */}
           <div className="hidden md:block absolute top-1/2 left-[5%] right-[5%] h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2" />
           
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 relative z-10">
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between gap-x-4 gap-y-8 md:gap-4 relative z-10">
             {steps.map((step, idx) => (
               <motion.div 
                 key={idx}
@@ -59,7 +59,7 @@ export function EmployeeJourney() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex flex-col items-center group w-full md:w-auto"
+                className="flex flex-col items-center group w-[45%] sm:w-[30%] md:w-auto"
               >
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#020904] border border-white/10 flex items-center justify-center mb-4 group-hover:border-[#a3e635]/50 group-hover:bg-[#11301c] transition-all duration-300 shadow-lg relative overflow-hidden">
                   <div className="absolute inset-0 bg-[#a3e635]/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />

@@ -9,7 +9,7 @@ import { useModal } from "@/context/ModalContext";
 export function HeroVariant3() {
   const { openModal } = useModal();
   return (
-    <section className="bg-[#f9f9f9] text-[#1a1c1c] antialiased min-h-screen flex flex-col relative">
+    <section className="bg-[#f9f9f9] text-[#1a1c1c] antialiased min-h-screen flex flex-col relative mt-[30px]">
       <style>{`
         .data-flow-bg {
             background-color: #f9f9f9;

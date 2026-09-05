@@ -99,7 +99,7 @@ export function ContactModal() {
         </button>
 
         {/* Left Panel */}
-        <div className="w-full md:w-5/12 bg-[#060d10] text-white flex flex-col justify-between p-8 relative overflow-hidden shrink-0">
+        <div className="hidden md:flex w-full md:w-5/12 bg-[#060d10] text-white flex-col justify-between p-8 relative overflow-hidden shrink-0">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-[#16a34a] via-transparent to-transparent"></div>
 
           <div className="relative z-10">

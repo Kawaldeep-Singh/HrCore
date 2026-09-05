@@ -8,7 +8,7 @@ export function PayrollHero() {
   const { openModal } = useModal();
 
   return (
-    <section className="relative pt-12 pb-16 md:pt-14 md:pb-24 lg:min-h-[85vh] flex flex-col justify-center bg-[#fbfdfa] overflow-hidden">
+    <section className="relative pt-12 pb-16 md:pt-14 md:pb-24 lg:min-h-[85vh] flex flex-col justify-center bg-[#fbfdfa] overflow-hidden mt-[45px] md:mt-0">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#006e1c]/20 rounded-full blur-[120px]" />

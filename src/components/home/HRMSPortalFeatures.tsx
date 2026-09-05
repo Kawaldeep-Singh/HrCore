@@ -143,6 +143,14 @@ export function HRMSPortalFeatures() {
     []
   );
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   /* ─── Preload all images ─── */
   useEffect(() => {
     features.forEach((f) => {
@@ -153,6 +161,8 @@ export function HRMSPortalFeatures() {
 
   /* ─── GSAP ScrollTrigger Setup ─── */
   useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) return;
+    
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
@@ -303,9 +313,9 @@ export function HRMSPortalFeatures() {
         </div>
 
         {/* ─── Two-Column Scroll Layout ─── */}
-        <div className="flex flex-col lg:flex-row relative">
+        <div className="flex flex-col-reverse lg:flex-row relative">
           {/* ▸ LEFT: Features + Timeline (42%) */}
-          <div className="w-full lg:w-[42%] relative">
+          <div className="w-full lg:w-[42%] relative mt-12 lg:mt-0">
             {/* Vertical Timeline */}
             <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px" ref={timelineTrackRef}>
               {/* Track */}
@@ -340,18 +350,18 @@ export function HRMSPortalFeatures() {
             </div>
 
             {/* Feature Steps */}
-            <div className="lg:pl-12">
+            <div className="lg:pl-12 grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col gap-4 lg:gap-0">
               {features.map((feature, i) => {
-                const isActive = activeIndex === i;
-                const isPast = i < activeIndex;
+                const isActive = isMobile ? true : activeIndex === i;
+                const isPast = isMobile ? false : i < activeIndex;
 
                 return (
                   <div
                     key={feature.num}
-                    className="hrms-feature-step min-h-[60vh] lg:min-h-[80vh] flex flex-col justify-center py-12 lg:py-0"
+                    className="hrms-feature-step lg:min-h-[80vh] flex flex-col justify-center"
                   >
                     <div
-                      className="transition-all duration-700 ease-out"
+                      className="transition-all duration-700 ease-out bg-white/5 lg:bg-transparent rounded-2xl p-6 lg:p-0 border border-white/[0.05] lg:border-none h-full"
                       style={{
                         opacity: isActive ? 1 : isPast ? 0.3 : 0.15,
                         transform: isActive ? "scale(1) translateY(0)" : "scale(0.97) translateY(8px)",
@@ -425,7 +435,7 @@ export function HRMSPortalFeatures() {
 
           {/* ▸ RIGHT: Sticky Dashboard (58%) */}
           <div className="w-full lg:w-[58%] lg:pl-12 xl:pl-20 relative">
-            <div className="sticky top-[12vh] h-auto lg:h-[76vh] flex items-center justify-center">
+            <div className="lg:sticky lg:top-[12vh] h-auto lg:h-[76vh] flex items-center justify-center">
               {/* Dashboard Container with 3D */}
               <div
                 ref={dashboardRef}

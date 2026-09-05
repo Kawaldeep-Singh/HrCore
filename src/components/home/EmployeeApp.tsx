@@ -46,10 +46,10 @@ export function EmployeeApp() {
         </motion.div>
 
         {/* 3-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center w-full">
 
           {/* Left Features */}
-          <div className="lg:col-span-4 flex flex-col gap-6 md:gap-8 order-2 lg:order-1 text-center lg:text-right items-center lg:items-end">
+          <div className="lg:col-span-4 flex flex-col gap-4 md:gap-8 order-2 lg:order-1 items-center lg:items-end">
             {leftFeatures.map((title, idx) => (
               <motion.div
                 key={idx}
@@ -57,12 +57,12 @@ export function EmployeeApp() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex items-center justify-end gap-4 group bg-white/5 lg:bg-transparent px-6 py-4 lg:p-0 rounded-2xl lg:rounded-none w-full max-w-md lg:max-w-none hover:bg-white/10 lg:hover:bg-transparent transition-colors"
+                className="flex items-center justify-start lg:justify-end gap-4 group bg-white/5 lg:bg-transparent px-6 py-4 lg:p-0 rounded-2xl lg:rounded-none w-full max-w-md lg:max-w-none hover:bg-white/10 lg:hover:bg-transparent transition-colors"
               >
-                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-[#a3e635] transition-colors">{title}</h3>
-                <div className="w-8 h-8 rounded-full bg-[#11301c] flex items-center justify-center shrink-0 group-hover:bg-[#a3e635] group-hover:text-[#041208] transition-all duration-300">
+                <div className="w-8 h-8 rounded-full bg-[#11301c] flex items-center justify-center shrink-0 group-hover:bg-[#a3e635] group-hover:text-[#041208] transition-all duration-300 lg:order-last">
                   <CheckCircle2 size={16} />
                 </div>
+                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-[#a3e635] transition-colors text-left lg:text-right w-full lg:w-auto">{title}</h3>
               </motion.div>
             ))}
           </div>
@@ -93,7 +93,7 @@ export function EmployeeApp() {
           </motion.div>
 
           {/* Right Features */}
-          <div className="lg:col-span-4 flex flex-col gap-6 md:gap-8 order-3 text-center lg:text-left items-center lg:items-start">
+          <div className="lg:col-span-4 flex flex-col gap-4 md:gap-8 order-3 items-center lg:items-start">
             {rightFeatures.map((title, idx) => (
               <motion.div
                 key={idx}
@@ -106,7 +106,7 @@ export function EmployeeApp() {
                 <div className="w-8 h-8 rounded-full bg-[#11301c] flex items-center justify-center shrink-0 group-hover:bg-[#a3e635] group-hover:text-[#041208] transition-all duration-300">
                   <CheckCircle2 size={16} />
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-[#a3e635] transition-colors">{title}</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-[#a3e635] transition-colors text-left w-full lg:w-auto">{title}</h3>
               </motion.div>
             ))}
           </div>

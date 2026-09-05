@@ -144,14 +144,14 @@ export function PowerfulHRMS() {
                   <feature.icon className="text-[#006e1c] group-hover:text-white transition-colors duration-500 relative z-10" size={24} />
                 </div>
 
-                <h3 className="text-base xl:text-lg font-bold text-gray-900 mb-3 leading-tight">{feature.title}</h3>
+                <h3 className="text-lg xl:text-xl font-bold text-gray-900 mb-3 leading-tight">{feature.title}</h3>
 
                 {/* Subtitle Badge */}
-                <div className="bg-[#f8faf9] group-hover:bg-[#e6f0e8] text-[#006e1c] px-3 py-1.5 rounded-full text-[9px] xl:text-[10px] font-bold uppercase tracking-wider mb-4 transition-colors duration-300">
+                <div className="bg-[#f8faf9] group-hover:bg-[#e6f0e8] text-[#006e1c] px-3 py-1.5 rounded-full text-xs xl:text-sm font-bold uppercase tracking-wider mb-4 transition-colors duration-300">
                   {feature.subtitle}
                 </div>
 
-                <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-500 text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {feature.description}
                 </p>
               </div>
