@@ -69,6 +69,7 @@
 
 html {
   font-size: 90%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -76,6 +77,24 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* Mobile Touch & Scroll Performance Optimizations */
+@media (max-width: 768px) {
+  html, body {
+    scroll-behavior: auto !important; /* Native hardware momentum with 0 input lag */
+  }
+
+  /* Disable heavy GPU-draining infinite background animations on mobile */
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-orb-3,
+  .hero-line-flow {
+    animation: none !important;
+    will-change: auto !important;
+  }
 }
 
 /* Base custom utilities */

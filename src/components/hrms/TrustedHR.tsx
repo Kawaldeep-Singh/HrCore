@@ -58,7 +58,7 @@ export function TrustedHR() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#041208]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#041208] leading-tight">
             Trusted to Power Better HR
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">

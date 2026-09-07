@@ -74,7 +74,7 @@ export function PayrollServices() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#041208] mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#041208] mb-6 leading-tight"
           >
             Everything Your Payroll Needs
           </motion.h2>
@@ -96,11 +96,8 @@ export function PayrollServices() {
               transition={{ duration: 0.5, delay: service.delay }}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#006e1c]/30 hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full"
             >
-              <div className="flex flex-col items-center gap-3 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[#e6f0e8] text-[#006e1c] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#006e1c] group-hover:text-white transition-all duration-300 shadow-sm">
-                  <service.icon size={28} />
-                </div>
-                <div className="text-xs font-black text-gray-300 uppercase tracking-widest mt-1">STEP 0{index + 1}</div>
+              <div className="w-16 h-16 rounded-2xl bg-[#e6f0e8] text-[#006e1c] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#006e1c] group-hover:text-white transition-all duration-300 shadow-sm mb-6">
+                <service.icon size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#006e1c] transition-colors">
                 {service.title}

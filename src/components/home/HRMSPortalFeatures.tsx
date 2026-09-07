@@ -57,39 +57,40 @@ function DashboardImage({
   useEffect(() => {
     if (!containerRef.current || !currentImgRef.current) return;
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
     if (prefersReduced) return;
 
     const tl = gsap.timeline();
 
-    /* Fade out the previous image */
+    /* Fade out previous image */
     if (prevImgRef.current && activeIndex !== prevIndex) {
       tl.fromTo(
         prevImgRef.current,
-        { opacity: 1, scale: 1, filter: "blur(0px)" },
+        { opacity: 1, scale: 1, filter: isMobile ? "none" : "blur(0px)" },
         {
           opacity: 0,
-          scale: 1.06,
-          filter: "blur(12px)",
-          duration: 0.5,
+          scale: 1.04,
+          filter: isMobile ? "none" : "blur(8px)",
+          duration: 0.4,
           ease: "power2.in",
         },
         0
       );
     }
 
-    /* Bring in the current image */
+    /* Bring in current image */
     tl.fromTo(
       currentImgRef.current,
-      { opacity: 0, scale: 0.92, filter: "blur(10px)", y: 20 },
+      { opacity: 0, scale: 0.96, filter: isMobile ? "none" : "blur(6px)", y: isMobile ? 10 : 20 },
       {
         opacity: 1,
         scale: 1,
-        filter: "blur(0px)",
+        filter: isMobile ? "none" : "blur(0px)",
         y: 0,
-        duration: 0.7,
+        duration: isMobile ? 0.4 : 0.6,
         ease: "power3.out",
       },
-      activeIndex !== prevIndex ? 0.15 : 0
+      activeIndex !== prevIndex ? 0.1 : 0
     );
 
     return () => {
@@ -98,25 +99,28 @@ function DashboardImage({
   }, [activeIndex, prevIndex]);
 
   return (
-    <div ref={containerRef} className="relative w-full" style={{ minHeight: "200px" }}>
-      {/* Previous image (fading out) */}
+    <div
+      ref={containerRef}
+      className="relative w-full aspect-[16/10] overflow-hidden rounded-[16px]"
+    >
+      {/* Previous Image (exiting) */}
       {activeIndex !== prevIndex && (
         <img
           ref={prevImgRef}
           src={prevSrc}
-          alt=""
-          className="absolute inset-0 w-full h-auto block will-change-transform"
-          style={{ transformOrigin: "center center" }}
-          aria-hidden="true"
+          alt={`HR Core — ${features[prevIndex].title}`}
+          className="absolute inset-0 w-full h-full object-cover object-top will-change-[opacity,transform]"
         />
       )}
-      {/* Current image (fading in) */}
+
+      {/* Current Image (entering) */}
       <img
+        key={currentSrc}
         ref={currentImgRef}
         src={currentSrc}
         alt={`HR Core — ${features[activeIndex].title}`}
-        className="relative w-full h-auto block will-change-transform"
-        style={{ transformOrigin: "center center" }}
+        loading={typeof window !== "undefined" && window.innerWidth < 1024 ? "lazy" : "eager"}
+        className="absolute inset-0 w-full h-full object-cover object-top will-change-[opacity,transform]"
       />
     </div>
   );
@@ -151,12 +155,14 @@ export function HRMSPortalFeatures() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  /* ─── Preload all images ─── */
+  /* ─── Preload all images on desktop only ─── */
   useEffect(() => {
-    features.forEach((f) => {
-      const img = new Image();
-      img.src = featureImageMap[f.title];
-    });
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      features.forEach((f) => {
+        const img = new Image();
+        img.src = featureImageMap[f.title];
+      });
+    }
   }, []);
 
   /* ─── GSAP ScrollTrigger Setup ─── */
@@ -296,7 +302,7 @@ export function HRMSPortalFeatures() {
         {/* ─── Section Header ─── */}
         <div className="pt-16 md:pt-20 pb-12 md:pb-16 text-center max-w-5xl mx-auto">
           <h2
-            className="hrms-heading text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.05]"
+            className="hrms-heading text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-8 leading-tight"
             style={{
               background: "linear-gradient(180deg, #F4F7F5 0%, rgba(244,247,245,0.7) 100%)",
               WebkitBackgroundClip: "text",

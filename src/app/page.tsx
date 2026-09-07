@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { HeroSwitcher } from "@/components/home/HeroSwitcher";
+import { HeroVariant3 } from "@/components/home/HeroVariant3";
 import { WhatWeOffer } from "@/components/home/WhatWeOffer";
 import { HRMSPortalFeatures } from "@/components/home/HRMSPortalFeatures";
 import { EmployeeApp } from "@/components/home/EmployeeApp";
@@ -10,11 +7,9 @@ import { MoreThanHRMS } from "@/components/home/MoreThanHRMS";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
-  const [activeVariant, setActiveVariant] = useState<1 | 3>(3);
-
   return (
     <main className="min-h-screen overflow-x-clip">
-      <HeroSwitcher activeVariant={activeVariant} setActiveVariant={setActiveVariant} />
+      <HeroVariant3 />
       <WhatWeOffer />
       <HRMSPortalFeatures />
       <EmployeeApp />

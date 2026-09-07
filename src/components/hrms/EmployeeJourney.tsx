@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserPlus, Briefcase, UserCheck, Users, TrendingUp, DollarSign, Award } from "lucide-react";
+import { UserPlus, Briefcase, UserCheck, Users, TrendingUp, IndianRupee, Award } from "lucide-react";
 
 export function EmployeeJourney() {
   const steps = [
@@ -10,7 +10,7 @@ export function EmployeeJourney() {
     { icon: UserCheck, label: "Onboard" },
     { icon: Users, label: "Manage" },
     { icon: TrendingUp, label: "Grow" },
-    { icon: DollarSign, label: "Pay" },
+    { icon: IndianRupee, label: "Pay" },
     { icon: Award, label: "Retire" },
   ];
 

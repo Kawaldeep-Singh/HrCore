@@ -25,7 +25,7 @@ export function PayrollConnection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 relative w-full h-[450px] bg-[#001505] rounded-[2.5rem] border border-white/10 p-6 flex items-center justify-center overflow-hidden shadow-2xl"
+            className="order-2 lg:order-1 relative w-full min-h-[400px] md:h-[450px] bg-[#001505] rounded-[2.5rem] border border-white/10 p-4 md:p-6 flex items-center justify-center overflow-hidden shadow-2xl"
           >
             {/* Tech Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
@@ -35,43 +35,45 @@ export function PayrollConnection() {
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[600px] h-[600px] bg-gradient-to-tr from-[#006e1c]/10 via-transparent to-transparent rounded-full pointer-events-none"
+              className="absolute w-[800px] h-[800px] bg-gradient-to-tr from-[#006e1c]/10 via-transparent to-transparent rounded-full pointer-events-none"
             />
 
-            <div className="relative z-10 w-full flex justify-between items-center">
+            <div className="relative z-10 w-full h-full flex flex-col md:flex-row justify-between items-center py-4 md:py-0 gap-6 md:gap-0">
               
-              {/* Left Column: Input Nodes */}
-              <div className="flex flex-col gap-6 w-[35%] relative">
+              {/* Inputs */}
+              <div className="flex flex-row md:flex-col gap-2 md:gap-6 w-full md:w-[35%] relative justify-center z-20">
                 {inputs.map((input, i) => (
-                  <div key={i} className="relative">
+                  <div key={i} className="relative flex-1 md:flex-none">
                     {/* Connecting line to center */}
-                    <div className="absolute top-1/2 left-full w-full h-[1px] bg-white/10 -z-10" />
+                    <div className="hidden md:block absolute top-1/2 left-full w-full h-[1px] bg-white/10 -z-10" />
+                    {/* Mobile connecting line */}
+                    <div className="md:hidden absolute top-full left-1/2 w-[1px] h-12 bg-white/10 -z-10" />
                     
                     <motion.div 
-                      initial={{ x: -20, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       transition={{ delay: i * 0.2 }}
-                      className="bg-black/60 border border-white/10 p-3 rounded-xl flex items-center gap-3 relative z-10 backdrop-blur-md"
+                      className="bg-black/60 border border-white/10 p-2 md:p-3 rounded-xl flex flex-col md:flex-row items-center gap-1 md:gap-3 relative z-10 backdrop-blur-md h-full justify-center"
                     >
                       <input.icon size={16} className="text-[#4cd964] shrink-0" />
-                      <span className="text-xs font-bold text-gray-300 hidden sm:block truncate">{input.label}</span>
+                      <span className="text-[9px] sm:text-xs font-bold text-gray-300 text-center md:text-left leading-tight">{input.label}</span>
                     </motion.div>
 
                     {/* Animated Data Particle */}
                     <motion.div 
-                      animate={{ x: [0, 100], opacity: [0, 1, 0] }}
+                      animate={{ x: [0, 50], opacity: [0, 1, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.5, ease: "linear" }}
-                      className="absolute top-1/2 left-[80%] w-1.5 h-1.5 bg-[#4cd964] rounded-full shadow-[0_0_8px_#4cd964] -translate-y-1/2 z-0"
+                      className="hidden md:block absolute top-1/2 left-[80%] w-1.5 h-1.5 bg-[#4cd964] rounded-full shadow-[0_0_8px_#4cd964] -translate-y-1/2 z-0"
                     />
                   </div>
                 ))}
               </div>
 
               {/* Center Core: Payroll Engine */}
-              <div className="relative w-[30%] flex justify-center z-20">
-                <div className="w-20 h-20 sm:w-28 sm:h-28 bg-[#003b0f] border-2 border-[#4cd964]/50 rounded-2xl flex flex-col items-center justify-center relative shadow-[0_0_40px_rgba(76,217,100,0.3)] backdrop-blur-xl">
-                  <Calculator size={32} className="text-[#4cd964] mb-1" />
-                  <span className="text-[10px] font-black tracking-widest text-white">CORE</span>
+              <div className="relative w-full md:w-[30%] flex justify-center z-20 py-4 md:py-0">
+                <div className="w-16 h-16 sm:w-28 sm:h-28 bg-[#003b0f] border-2 border-[#4cd964]/50 rounded-2xl flex flex-col items-center justify-center relative shadow-[0_0_40px_rgba(76,217,100,0.3)] backdrop-blur-xl z-10">
+                  <Calculator size={24} className="text-[#4cd964] mb-1 sm:w-8 sm:h-8" />
+                  <span className="text-[8px] sm:text-[10px] font-black tracking-widest text-white">CORE</span>
                   
                   {/* Pulsing rings */}
                   <motion.div 
@@ -87,26 +89,28 @@ export function PayrollConnection() {
                 </div>
               </div>
 
-              {/* Right Column: Output Node */}
-              <div className="w-[35%] flex justify-end relative">
+              {/* Output Node */}
+              <div className="w-full md:w-[35%] flex justify-center md:justify-end relative z-20">
                 {/* Connecting line from center */}
-                <div className="absolute top-1/2 right-full w-full h-[1px] bg-white/10 -z-10" />
+                <div className="hidden md:block absolute top-1/2 right-full w-full h-[1px] bg-white/10 -z-10" />
+                {/* Mobile connecting line */}
+                <div className="md:hidden absolute bottom-full left-1/2 w-[1px] h-12 bg-white/10 -z-10" />
                 
                 <motion.div 
-                  initial={{ x: 20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.8 }}
-                  className="bg-[#006e1c]/20 border border-[#4cd964]/40 p-4 rounded-xl flex flex-col items-center gap-2 relative z-10 backdrop-blur-md shadow-[0_0_20px_rgba(0,110,28,0.2)]"
+                  className="bg-[#006e1c]/20 border border-[#4cd964]/40 p-3 md:p-4 rounded-xl flex md:flex-col items-center gap-2 relative z-10 backdrop-blur-md shadow-[0_0_20px_rgba(0,110,28,0.2)]"
                 >
-                  <FileText size={24} className="text-[#4cd964]" />
-                  <span className="text-sm font-bold text-white">Payslip</span>
+                  <FileText size={20} className="text-[#4cd964] sm:w-6 sm:h-6" />
+                  <span className="text-xs sm:text-sm font-bold text-white">Payslip Generated</span>
                 </motion.div>
 
                 {/* Animated Data Particle to Output */}
                 <motion.div 
-                  animate={{ x: [-100, 0], opacity: [0, 1, 0] }}
+                  animate={{ x: [-50, 0], opacity: [0, 1, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                  className="absolute top-1/2 right-[80%] w-2 h-2 bg-[#4cd964] rounded-full shadow-[0_0_10px_#4cd964] -translate-y-1/2 z-0"
+                  className="hidden md:block absolute top-1/2 right-[80%] w-2 h-2 bg-[#4cd964] rounded-full shadow-[0_0_10px_#4cd964] -translate-y-1/2 z-0"
                 />
               </div>
 

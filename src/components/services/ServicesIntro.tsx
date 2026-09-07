@@ -29,7 +29,7 @@ export function ServicesIntro() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl md:text-5xl font-bold mb-10 leading-tight"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 leading-tight"
         >
           HR Support That Works <br className="hidden md:block" />
           <span className="text-gray-400">Around Your Business.</span>

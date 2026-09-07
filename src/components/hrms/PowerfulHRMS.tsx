@@ -101,7 +101,7 @@ export function PowerfulHRMS() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-[#041208]"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#041208] leading-tight"
           >
             Meet Our Powerful HRMS
           </motion.h2>

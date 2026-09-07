@@ -28,7 +28,7 @@ export function AboutWhoWeAre() {
               <span className="text-[#16a34a] font-bold tracking-widest text-xs">WHO WE ARE</span>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 leading-[1.2]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
               More Than Just <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] to-[#22c55e]">HR Technology.</span>
             </h2>

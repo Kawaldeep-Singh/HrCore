@@ -46,7 +46,7 @@ export function PayrollAudience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-[#041208]"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#041208] leading-tight"
           >
             Payroll Support That Fits Your Business
           </motion.h2>

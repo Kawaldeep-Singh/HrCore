@@ -34,7 +34,7 @@ export function PayrollProcess() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-white"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
             From Attendance to Payslip, Seamlessly Connected.
           </motion.h2>
