@@ -26,7 +26,7 @@ export function WhatWeOffer() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-[#f7f9f8] text-[#1a1a1a]">
+    <section className="relative z-20 py-16 md:py-20 bg-[#f7f9f8] text-[#1a1a1a]">
       <div className="w-[82%] mx-auto flex flex-col md:flex-row gap-12 items-start">
         {/* Left Side Content */}
         <motion.div 
@@ -34,7 +34,7 @@ export function WhatWeOffer() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="md:w-1/3 flex flex-col gap-6 sticky top-32"
+          className="w-full md:w-1/3 flex flex-col gap-6 md:sticky md:top-32"
         >
           <span className="text-[#16a34a] font-semibold tracking-wider uppercase text-sm">
             What We Offer
@@ -55,7 +55,7 @@ export function WhatWeOffer() {
               key={item.num}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="group bg-white hover:bg-[#f0fdf4] border border-gray-200 hover:border-[#16a34a]/20 p-6 md:p-8 rounded-2xl transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(22,163,74,0.08)] relative overflow-hidden"
             >

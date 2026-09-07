@@ -321,7 +321,7 @@ export function HRMSPortalFeatures() {
         {/* ─── Two-Column Scroll Layout ─── */}
         <div className="flex flex-col-reverse lg:flex-row relative">
           {/* ▸ LEFT: Features + Timeline (42%) */}
-          <div className="w-full lg:w-[42%] relative mt-12 lg:mt-0">
+          <div className="w-full lg:w-[42%] relative mt-6 lg:mt-0">
             {/* Vertical Timeline */}
             <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px" ref={timelineTrackRef}>
               {/* Track */}
@@ -439,8 +439,8 @@ export function HRMSPortalFeatures() {
             </div>
           </div>
 
-          {/* ▸ RIGHT: Sticky Dashboard (58%) */}
-          <div className="w-full lg:w-[58%] lg:pl-12 xl:pl-20 relative">
+          {/* ▸ RIGHT: Sticky Dashboard (58%) - Hidden on mobile, only visible on PC/Desktop (lg:) */}
+          <div className="hidden lg:block w-full lg:w-[58%] lg:pl-12 xl:pl-20 relative">
             <div className="lg:sticky lg:top-[12vh] h-auto lg:h-[76vh] flex items-center justify-center">
               {/* Dashboard Container with 3D */}
               <div
