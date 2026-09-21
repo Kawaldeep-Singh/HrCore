@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Image Map: feature title → image path ─── */
 const featureImageMap: Record<string, string> = {
-  "Hire to Retire": "/hr-performace/Hire to Retire.png",
+  "Hire to Retire": "/hr-performace/Hire to Retire1.png",
   "Time to Leave": "/hr-performace/Time to Leave.png",
   "Recruit to Onboard": "/hr-performace/Recruit to Onboard.png",
   "Payroll to Compliance": "/hr-performace/payroll.png",
@@ -27,7 +27,7 @@ const featureImageMap: Record<string, string> = {
 /* ─── Feature Data ─── */
 const features = [
   { num: "01", title: "Hire to Retire", desc: "Complete employee journey", color: "#4CAF68", icon: Users },
-  { num: "02", title: "Time to Leave", desc: "Attendance & leave management", color: "#3B9B5A", icon: Clock },
+  { num: "02", title: "Time to Leave", desc: "Workforce Attendance", color: "#3B9B5A", icon: Clock },
   { num: "03", title: "Recruit to Onboard", desc: "Hiring made simple", color: "#2F7D4C", icon: Briefcase },
   { num: "04", title: "Payroll to Compliance", desc: "Payroll & statutory needs", color: "#4CAF68", icon: IndianRupee },
   { num: "05", title: "Learn & Grow", desc: "Training & development", color: "#3B9B5A", icon: GraduationCap },
@@ -57,7 +57,6 @@ function DashboardImage({
   useEffect(() => {
     if (!containerRef.current || !currentImgRef.current) return;
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
     if (prefersReduced) return;
 
     const tl = gsap.timeline();
@@ -66,12 +65,11 @@ function DashboardImage({
     if (prevImgRef.current && activeIndex !== prevIndex) {
       tl.fromTo(
         prevImgRef.current,
-        { opacity: 1, scale: 1, filter: isMobile ? "none" : "blur(0px)" },
+        { opacity: 1, scale: 1 },
         {
           opacity: 0,
-          scale: 1.04,
-          filter: isMobile ? "none" : "blur(8px)",
-          duration: 0.4,
+          scale: 1.02,
+          duration: 0.35,
           ease: "power2.in",
         },
         0
@@ -81,16 +79,15 @@ function DashboardImage({
     /* Bring in current image */
     tl.fromTo(
       currentImgRef.current,
-      { opacity: 0, scale: 0.96, filter: isMobile ? "none" : "blur(6px)", y: isMobile ? 10 : 20 },
+      { opacity: 0, scale: 0.98, y: 8 },
       {
         opacity: 1,
         scale: 1,
-        filter: isMobile ? "none" : "blur(0px)",
         y: 0,
-        duration: isMobile ? 0.4 : 0.6,
+        duration: 0.45,
         ease: "power3.out",
       },
-      activeIndex !== prevIndex ? 0.1 : 0
+      activeIndex !== prevIndex ? 0.05 : 0
     );
 
     return () => {
@@ -101,7 +98,8 @@ function DashboardImage({
   return (
     <div
       ref={containerRef}
-      className="relative w-full aspect-[16/10] overflow-hidden rounded-[16px]"
+      className="relative w-full aspect-[1912/862] overflow-hidden rounded-[16px] bg-[#0c1a12]"
+      style={{ aspectRatio: "1912 / 862" }}
     >
       {/* Previous Image (exiting) */}
       {activeIndex !== prevIndex && (
@@ -109,7 +107,7 @@ function DashboardImage({
           ref={prevImgRef}
           src={prevSrc}
           alt={`HR Core — ${features[prevIndex].title}`}
-          className="absolute inset-0 w-full h-full object-cover object-top will-change-[opacity,transform]"
+          className="absolute inset-0 w-full h-full object-contain will-change-[opacity,transform]"
         />
       )}
 
@@ -119,8 +117,8 @@ function DashboardImage({
         ref={currentImgRef}
         src={currentSrc}
         alt={`HR Core — ${features[activeIndex].title}`}
-        loading={typeof window !== "undefined" && window.innerWidth < 1024 ? "lazy" : "eager"}
-        className="absolute inset-0 w-full h-full object-cover object-top will-change-[opacity,transform]"
+        loading="eager"
+        className="absolute inset-0 w-full h-full object-contain will-change-[opacity,transform]"
       />
     </div>
   );
@@ -155,7 +153,7 @@ export function HRMSPortalFeatures() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  /* ─── Preload all images on desktop only ─── */
+  /* Preload all images on desktop only */
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth >= 1024) {
       features.forEach((f) => {
@@ -168,7 +166,7 @@ export function HRMSPortalFeatures() {
   /* ─── GSAP ScrollTrigger Setup ─── */
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth < 1024) return;
-    
+
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
@@ -355,7 +353,7 @@ export function HRMSPortalFeatures() {
               ))}
             </div>
 
-            {/* Feature Steps */}
+            {/* Feature Steps - On mobile, only text cards are displayed, no images */}
             <div className="lg:pl-12 grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col gap-4 lg:gap-0">
               {features.map((feature, i) => {
                 const isActive = isMobile ? true : activeIndex === i;
@@ -439,13 +437,13 @@ export function HRMSPortalFeatures() {
             </div>
           </div>
 
-          {/* ▸ RIGHT: Sticky Dashboard (58%) - Hidden on mobile, only visible on PC/Desktop (lg:) */}
+          {/* ▸ RIGHT: Sticky Dashboard (58%) - Strictly hidden on mobile, only visible on PC/Desktop (lg:) */}
           <div className="hidden lg:block w-full lg:w-[58%] lg:pl-12 xl:pl-20 relative">
             <div className="lg:sticky lg:top-[12vh] h-auto lg:h-[76vh] flex items-center justify-center">
               {/* Dashboard Container with 3D */}
               <div
                 ref={dashboardRef}
-                className="relative w-full max-w-[720px] will-change-transform"
+                className="relative w-full max-w-[800px] will-change-transform"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Ambient glow behind dashboard — shifts color per feature */}
@@ -484,51 +482,36 @@ export function HRMSPortalFeatures() {
                     </div>
                   </div>
 
-                  {/* Dashboard Image — DYNAMIC per feature */}
+                  {/* Dashboard Image Container — Full aspect ratio, uncropped */}
                   <div className="relative overflow-hidden bg-[#07120E]">
                     <DashboardImage
                       activeIndex={activeIndex}
                       prevIndex={prevIndex}
                     />
+                  </div>
 
-                    {/* Animated gradient overlay that shifts with active index */}
+                  {/* Active feature indicator bar */}
+                  <div className="px-5 py-3 bg-[#0c1a12] border-t border-white/[0.06] flex items-center gap-3">
                     <div
-                      className="absolute inset-0 pointer-events-none transition-all duration-1000 ease-out"
+                      className="px-3 py-1 rounded-lg text-xs font-bold tracking-wider uppercase transition-all duration-500 border"
                       style={{
-                        background: `linear-gradient(${150 + activeIndex * 15}deg, 
-                          ${features[activeIndex].color}10 0%, 
-                          transparent 40%, 
-                          transparent 60%, 
-                          rgba(7,18,14,0.3) 100%)`,
+                        background: `${features[activeIndex].color}20`,
+                        borderColor: `${features[activeIndex].color}40`,
+                        color: features[activeIndex].color,
                       }}
-                    />
+                    >
+                      {features[activeIndex].num} — {features[activeIndex].title}
+                    </div>
 
-                    {/* Bottom fade */}
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a1810] to-transparent pointer-events-none" />
-
-                    {/* Active feature indicator overlay */}
-                    <div className="absolute bottom-4 left-5 right-5 flex items-center gap-3 pointer-events-none">
+                    {/* Mini progress bar */}
+                    <div className="flex-1 h-[3px] bg-white/[0.06] rounded-full overflow-hidden">
                       <div
-                        className="px-3 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all duration-500 border backdrop-blur-md"
+                        className="h-full rounded-full transition-all duration-700 ease-out"
                         style={{
-                          background: `${features[activeIndex].color}20`,
-                          borderColor: `${features[activeIndex].color}40`,
-                          color: features[activeIndex].color,
+                          width: `${((activeIndex + 1) / features.length) * 100}%`,
+                          background: `linear-gradient(90deg, ${features[activeIndex].color}, ${features[activeIndex].color}80)`,
                         }}
-                      >
-                        {features[activeIndex].num} — {features[activeIndex].title}
-                      </div>
-
-                      {/* Mini progress bar */}
-                      <div className="flex-1 h-[3px] bg-white/[0.06] rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-700 ease-out"
-                          style={{
-                            width: `${((activeIndex + 1) / features.length) * 100}%`,
-                            background: `linear-gradient(90deg, ${features[activeIndex].color}, ${features[activeIndex].color}80)`,
-                          }}
-                        />
-                      </div>
+                      />
                     </div>
                   </div>
                 </div>
