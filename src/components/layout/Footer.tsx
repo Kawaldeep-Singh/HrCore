@@ -1,25 +1,77 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Logo } from "@/components/ui/Logo";
-import { useModal } from "@/context/ModalContext";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
+import { useModal } from '@/context/ModalContext';
 
 const FacebookIcon = ({ size }: { size: number }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
 );
 
 const TwitterIcon = ({ size }: { size: number }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+  </svg>
 );
 
 const LinkedinIcon = ({ size }: { size: number }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
 );
 
 const InstagramIcon = ({ size }: { size: number }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
 );
 
 export function Footer() {
@@ -44,7 +96,9 @@ export function Footer() {
     <footer className="bg-[#041208] text-gray-400 pt-24 pb-8 relative overflow-hidden border-t border-white/10">
       {/* Giant Background Text */}
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
-        <h1 className="text-[20vw] font-black text-white whitespace-nowrap">HR CORE</h1>
+        <h1 className="text-[20vw] font-black text-white whitespace-nowrap">
+          HR CORE
+        </h1>
       </div>
 
       {/* Top Gradient Glow */}
@@ -54,27 +108,49 @@ export function Footer() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         className="w-[82%] mx-auto relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-20">
-
           {/* Brand Column (Takes 2 cols) */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 pr-0 lg:pr-8">
-            <Link href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-2 pr-0 lg:pr-8"
+          >
+            <Link
+              href="/"
+              className="inline-block mb-6 hover:opacity-80 transition-opacity"
+            >
               <Logo width={200} height={50} />
             </Link>
 
             <p className="text-gray-400 text-base mb-8 leading-relaxed font-medium">
-              Powering smarter HR with technology, payroll expertise, and professional HR services.
+              Powering smarter HR with technology, payroll expertise, and
+              professional HR services.
             </p>
 
             <div className="flex gap-4">
               {[
-                { Icon: FacebookIcon, label: "Facebook", href: "https://facebook.com" },
-                { Icon: TwitterIcon, label: "Twitter", href: "https://twitter.com" },
-                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
-                { Icon: InstagramIcon, label: "Instagram", href: "https://instagram.com" },
+                {
+                  Icon: FacebookIcon,
+                  label: 'Facebook',
+                  href: 'https://facebook.com',
+                },
+                {
+                  Icon: TwitterIcon,
+                  label: 'Twitter',
+                  href: 'https://twitter.com',
+                },
+                {
+                  Icon: LinkedinIcon,
+                  label: 'LinkedIn',
+                  href: 'https://linkedin.com',
+                },
+                {
+                  Icon: InstagramIcon,
+                  label: 'Instagram',
+                  href: 'https://instagram.com',
+                },
               ].map(({ Icon, label, href }, i) => (
                 <a
                   key={i}
@@ -92,25 +168,33 @@ export function Footer() {
 
           {/* HRMS Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              HRMS
-            </h4>
+            <Link href="/hrms-overview" className="inline-block mb-6">
+              <h4 className="text-white font-bold text-lg flex items-center gap-2 hover:text-[#a3e635] transition-colors">
+                HRMS
+              </h4>
+            </Link>
             <ul className="space-y-3">
               {[
-                { label: "HRMS Overview", href: "/hrms" },
-                { label: "Features", href: "/hrms" },
-                { label: "HRMS Portal", href: "/hrms" },
-                { label: "Employee App", href: "/hrms" },
-                { label: "Why HRMS", href: "/hrms" },
-                { label: "Book a Demo", href: "" },
+                { label: 'HRMS Overview', href: '/hrms-overview' },
+                { label: 'Features', href: '/hrms-overview' },
+                { label: 'HRMS Portal', href: '/hrms-overview' },
+                { label: 'Employee App', href: '/hrms-overview' },
+                { label: 'Why HRMS', href: '/hrms-overview' },
+                { label: 'Book a Demo', href: '' },
               ].map((item) => (
                 <li key={item.label}>
-                  {item.label === "Book a Demo" ? (
-                    <button onClick={openModal} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                  {item.label === 'Book a Demo' ? (
+                    <button
+                      onClick={openModal}
+                      className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors"
+                    >
                       <span className="text-sm font-medium">{item.label}</span>
                     </button>
                   ) : (
-                    <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                    <Link
+                      href={item.href}
+                      className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors"
+                    >
                       <span className="text-sm font-medium">{item.label}</span>
                     </Link>
                   )}
@@ -121,20 +205,25 @@ export function Footer() {
 
           {/* Payroll & HR Services Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              Payroll & HR Services
-            </h4>
+            <Link href="/payroll" className="inline-block mb-6">
+              <h4 className="text-white font-bold text-lg flex items-center gap-2 hover:text-[#a3e635] transition-colors">
+                Payroll & HR Services
+              </h4>
+            </Link>
             <ul className="space-y-3">
               {[
-                { label: "Payroll Services", href: "/payroll" },
-                { label: "HR Services", href: "/services" },
-                { label: "Recruitment", href: "/services" },
-                { label: "HR Operations", href: "/services" },
-                { label: "HR Compliance", href: "/services" },
-                { label: "HR Consulting", href: "/services" },
+                { label: 'Payroll Services', href: '/payroll' },
+                { label: 'HR Services', href: '/services' },
+                { label: 'Recruitment', href: '/services' },
+                { label: 'HR Operations', href: '/services' },
+                { label: 'HR Compliance', href: '/services' },
+                { label: 'HR Consulting', href: '/services' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                  <Link
+                    href={item.href}
+                    className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors"
+                  >
                     <span className="text-sm font-medium">{item.label}</span>
                   </Link>
                 </li>
@@ -149,13 +238,16 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Contact Us", href: "/contact-us" },
-                { label: "Client Login", href: "/login" },
+                { label: 'Home', href: '/' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Contact Us', href: '/contact-us' },
+                { label: 'Client Login', href: '/login' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                  <Link
+                    href={item.href}
+                    className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors"
+                  >
                     <span className="text-sm font-medium">{item.label}</span>
                   </Link>
                 </li>
@@ -165,21 +257,28 @@ export function Footer() {
 
           {/* Get in Touch Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              Get in Touch
-            </h4>
+            <Link href="/contact-us" className="inline-block mb-6">
+              <h4 className="text-white font-bold text-lg flex items-center gap-2 hover:text-[#a3e635] transition-colors">
+                Get in Touch
+              </h4>
+            </Link>
             <ul className="space-y-3">
-              {["Talk to an Expert", "Book a Demo"].map((item) => (
+              {['Talk to an Expert', 'Book a Demo'].map((item) => (
                 <li key={item}>
-                  <button onClick={openModal} className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors">
+                  <button
+                    onClick={openModal}
+                    className="group flex items-center text-gray-400 hover:text-[#a3e635] transition-colors"
+                  >
                     <span className="text-sm font-medium">{item}</span>
-                    <ArrowRight size={14} className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 text-[#a3e635] transition-all duration-300" />
+                    <ArrowRight
+                      size={14}
+                      className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 text-[#a3e635] transition-all duration-300"
+                    />
                   </button>
                 </li>
               ))}
             </ul>
           </motion.div>
-
         </div>
 
         {/* Bottom Bar */}
@@ -187,11 +286,23 @@ export function Footer() {
           variants={itemVariants}
           className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6"
         >
-          <p className="text-sm text-gray-500 font-medium">© 2026 HR Core. All Rights Reserved.</p>
+          <p className="text-sm text-gray-500 font-medium">
+            © 2026 HR Core. All Rights Reserved.
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-gray-500 font-medium">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </Link>
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
-            <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link
+              href="/terms-conditions"
+              className="hover:text-white transition-colors"
+            >
+              Terms & Conditions
+            </Link>
             <span className="w-1 h-1 rounded-full bg-gray-700"></span>
             {/* <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link> */}
           </div>
